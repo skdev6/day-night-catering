@@ -1,12 +1,12 @@
 <template>
-  <div class="product__gallery h-[500px] flex gap-4">
+  <div :class="'product__gallery h-[500px] flex gap-4 ' + (isV ? 'flex-row' : 'flex-col-reverse')">
     <!-- Thumbnail Gallery -->
     <swiper
       class="product__gallery-thumbs px-4 h-full"
       :modules="[FreeMode, Thumbs]"
       :space-between="10"
       :slides-per-view="'auto'"
-      :direction="'vertical'"
+      :direction="thumbDirection === 'vertical' ? 'vertical' : 'horizontal'"
       free-mode
       watch-slides-progress
       @swiper="setThumbsSwiper"
@@ -23,7 +23,6 @@
         />
       </swiper-slide>
     </swiper>
-
     <!-- Main Gallery -->
     <swiper
       class="product__gallery-main w-full h-full"
@@ -40,6 +39,17 @@
       </swiper-slide>
     </swiper>
   </div>
+  <div class="pl-[100px] flex items-center justify-center mt-6 gap-2">
+    <badge class="bg-[#F8F8F8] text-[#212121] badge-lg border border-[#E0E0E0]">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.9387 12.0334L14.833 14.8334M13.8997 7.36671C13.8997 10.975 10.9746 13.9 7.36634 13.9C3.75808 13.9 0.833008 10.975 0.833008 7.36671C0.833008 3.75845 3.75808 0.833374 7.36634 0.833374C10.9746 0.833374 13.8997 3.75845 13.8997 7.36671Z" stroke="#212121" stroke-width="1.66667" stroke-linecap="round"/>
+        <path d="M7.5 9.16663V7.29163M7.5 7.29163V5.41663M7.5 7.29163H5.625M7.5 7.29163H9.375" stroke="#212121" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </badge>
+    <badge class="bg-[#F8F8F8] text-[#212121] badge-lg border border-[#E0E0E0]">
+      查看餐單
+    </badge>
+  </div>
 </template>
 
 <script setup>
@@ -54,6 +64,7 @@
   import "swiper/css/free-mode";
 
   import product from "@/assets/img/product.webp";
+  import badge from "./badge.vue";
 
   const images = ref([product, product, product, product, product,product, product, product, product, product]);
 
@@ -62,6 +73,25 @@
 
   function setThumbsSwiper(swiper) {
     thumbsSwiper.value = swiper;
+  }
+
+
+  
+</script>
+
+<script>
+  export default {
+    props: {
+      thumbDirection:{
+        type:String,
+        default:'horizontal'
+      }
+    },
+    computed:{
+      isV(){
+        return this.thumbDirection === 'vertical'
+      }
+    }
   }
 </script>
 

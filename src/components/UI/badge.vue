@@ -1,6 +1,6 @@
 <template>
-    <a v-if="href" :href="href" class="badge inline-block">{{ title }}</a>
-    <span v-else class="badge inline-block">{{ title }}</span>
+    <a v-if="href" :href="href" class="badge inline-flex items-center"><slot/></a>
+    <span v-else class="badge inline-flex items-center"><slot/></span>
 </template>
 
 <script>
@@ -20,5 +20,12 @@ export default {
         padding: 2px 9px;
         border-radius: 4px;
         font-weight: 700;
+        position: relative;
     }
+    .badge-2{
+      padding: 4px 12px;
+    }
+  .badge-lg {
+      padding: 8px 11px;
+  }
 </style>
