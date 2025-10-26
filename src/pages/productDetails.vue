@@ -1,22 +1,26 @@
 <script setup>
-    import Layout from '../components/layout/index.vue'
+    import Layout from '../components/layout/index.vue';
     import productGallery from '@/components/UI/productGallery.vue';
     import badge from '@/components/UI/badge.vue';
 </script>
 
-<template>
-    <Layout>
+<template>                                                                                                                                                                                                                                                                                                                                                             
+    <Layout>                                                                                                                                                                                                                                                                                                                                                             
         <div class="lg:grid container px-4 mx-auto grid-cols-2 gap-x-14 ff-noto pt-14">
             <div class="w-full">
-                <productGallery thumbDirection="vertical"/>
-                <productGallery/>
-                <h3 class="mt-6 title-md">產品介紹</h3>
-                <p>套餐附送相應人數餐具 (叉，紙碟，紙巾，食物夾)【2025皇牌之選】日夜經典到會套餐，精選超過90款環球美食，涵蓋經典沙律、特色熱葷、精緻小食、滋味意粉飯類及甜品，滿足各種口味需求。無論是派對、公司聚餐或家庭聚會，這款套餐都能帶來極致美食享受，讓你的宴會更添驚喜與奢華！</p>
-                <h3 class="mt-6 title-md">服務與注意事項</h3>
+                <productGallery class="hidden lg:block nav-none" thumbDirection="vertical"/>
+                <productGallery class="lg:hidden"/>
+                <div class="hidden lg:block">
+                    <h3 class="mt-6 title-md">產品介紹</h3>                                                                                                                                                                                                                                                                                                                                                             
+                    <p>套餐附送相應人數餐具 (叉，紙碟，紙巾，食物夾)【2025皇牌之選】日夜經典到會套餐，精選超過90款環球美食，涵蓋經典沙律、特色熱葷、精緻小食、滋味意粉飯類及甜品，滿足各種口味需求。無論是派對、公司聚餐或家庭聚會，這款套餐都能帶來極致美食享受，讓你的宴會更添驚喜與奢華！</p>
+                    <h3 class="mt-6 title-md">服務與注意事項</h3>
+                </div>
             </div>
-            <div>
-                <badge class="bg-[#212121] text-[#FFC300]">70% OFF</badge>
-                <h1 class="title-lg font-bold my-3">日夜經典到會套餐 120人 </h1>
+            <div class="mt-6 lg:mt-0">
+                <div class="flex flex-wrap lg:flex-col items-center lg:items-start gap-2 mb-3">
+                    <badge class="bg-[#212121] text-[#FFC300]">70% OFF</badge>
+                    <h1 class="title-lg font-bold">日夜經典到會套餐 120人 </h1>
+                </div>
                 <h4 class="text-[18px] font-semibold text-[#EA3E3E]"><small>$</small>16560 <s class="text-[#616161] text-[14px]">$19733</s></h4>
                 <div class="flex items-center gap-5 my-4 text-sm">
                     <badge class="bg-[#FFDFD0] text-[#7E4A31] badge-2">幫你慳咗</badge>
@@ -30,12 +34,13 @@
                         免運費
                     </span>
                 </div>
-                <div class="flex items-center gap-5 mt-5 text-sm">
-                    <badge class="bg-[#FFFAEA] text-[#212121] badge-2">🏠家庭聚餐</badge>
-                    <badge class="bg-[#FFFAEA] text-[#212121] badge-2">☕️下午茶</badge>
-                    <badge class="bg-[#FFFAEA] text-[#212121] badge-2">📅公司茶聚</badge>
-                    <badge class="bg-[#FFFAEA] text-[#212121] badge-2">🥣午餐會</badge>
+                <div class="flex items-center gap-3 lg:gap-5 mt-5 text-sm">
+                    <badge class="bg-[#FFFAEA] text-[#212121] badge-2 whitespace-nowrap">🏠家庭聚餐</badge>
+                    <badge class="bg-[#FFFAEA] text-[#212121] badge-2 whitespace-nowrap">☕️下午茶</badge>
+                    <badge class="bg-[#FFFAEA] text-[#212121] badge-2 whitespace-nowrap">📅公司茶聚</badge>
+                    <badge class="bg-[#FFFAEA] text-[#212121] badge-2 whitespace-nowrap">🥣午餐會</badge>
                 </div>
+                <addSlide class="mt-6"/>
                 <hr class="text-[#E0E0E0] my-[30px]"/>
                 <div class="flex items-center">
                     <h4 class="title-md">選擇菜式 <span class="text-[#616161] text-sm ml-2">還有<span class="text-[#212121]">12</span>個選項未選</span></h4>
@@ -57,12 +62,16 @@
             </div>
         </div> 
     </Layout>
-    <sideWidgets class="fixed right-5 top-[50%] translate-y-[-50%] z-50" />
+    <sideWidgets class="fixed right-0 lg:right-5 top-14 lg:top-[50%] lg:translate-y-[-50%] z-50" />
+    <inputCount class="w-[124px]"/>
 </template>
 
 <script>
     import {ref} from 'vue';
-import sideWidgets from '@/components/UI/sideWidgets.vue';
+    import sideWidgets from '@/components/UI/sideWidgets.vue';
+    import addSlide from '@/components/UI/addSlide.vue';
+    import inputCount from '@/components/UI/inputCount.vue';
+
     const optionBox = ref([
         {
             id:1,

@@ -1,23 +1,23 @@
 <template>
     <div class="flex flex-col gap-3">
-        <div class="border bg-white border-[#E0E0E0] px-2 py-3 text-center w-[81px] rounded-2xl flex flex-col gap-4">
+        <div class="side-widget-wrap border bg-white border-[#E0E0E0] px-2 py-3 text-center w-[81px] rounded-2xl flex flex-col gap-4">
             <a href="#" class="item">
                 <img :src="icon" class="mx-auto mb-2" alt="">
-                <div class="text-sm">查看餐單</div>
+                <div class="text-sm hidden lg:block">查看餐單</div>
             </a>
             <a href="#" class="item">
                 <img :src="icon" class="mx-auto mb-2" alt="">
-                <div class="text-sm">查看餐單</div>
+                <div class="text-sm hidden lg:block">查看餐單</div>
             </a>
             <a href="#" class="item">
                 <img :src="whatsapp" class="mx-auto mb-2" alt="">
-                <div class="text-sm">查看餐單</div>
+                <div class="text-sm hidden lg:block">查看餐單</div>
             </a>
         </div>
-        <div class="border bg-white border-[#E0E0E0] px-2 py-3 text-center w-[81px] rounded-2xl flex flex-col gap-3">
+        <div class="side-widget-wrap border bg-white border-[#E0E0E0] px-2 py-3 text-center w-[81px] rounded-2xl flex flex-col gap-3">
             <a href="#" class="item">
-                <img :src="arrowTop" class="mx-auto mb-2" alt="">
-                <div class="text-sm">回到頂部</div>
+                <img :src="arrowTop" class="mx-auto" alt="">
+                <div class="text-sm hidden lg:block">回到頂部</div>
             </a>
         </div>
     </div>
@@ -37,6 +37,12 @@ export default {
     }
 }
 </script>
-<style lang="">
-    
+<style>
+    @media (max-width:991px){
+        .side-widget-wrap {
+            border-radius: 8px 0 0 8px;
+            padding: 10px;
+            max-width: 50px;
+        }
+    }
 </style>

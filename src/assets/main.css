@@ -21,3 +21,13 @@ body{
     font-size: 12px;
     line-height: 18px;
 }
+@media (max-width:991px){
+    .title-lg{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .title-md{
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
