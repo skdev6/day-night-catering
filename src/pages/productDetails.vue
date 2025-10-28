@@ -6,17 +6,17 @@
 
 <template>                                                                                                                                                                                                                                                                                                                                                             
     <Layout>                                                                                                                                                                                                                                                                                                                                                             
-        <div class="lg:grid container px-4 mx-auto grid-cols-2 gap-x-14 ff-noto pt-14">
+        <div class="lg:grid container lg:px-4 mx-auto grid-cols-2 gap-x-14 ff-noto pt-14">
             <div class="w-full">
                 <productGallery class="hidden lg:block nav-none" thumbDirection="vertical"/>
                 <productGallery class="lg:hidden"/>
-                <div class="hidden lg:block">
+                <div class="px-4 lg:px-0 hidden lg:block">
                     <h3 class="mt-6 title-md">產品介紹</h3>                                                                                                                                                                                                                                                                                                                                                             
                     <p>套餐附送相應人數餐具 (叉，紙碟，紙巾，食物夾)【2025皇牌之選】日夜經典到會套餐，精選超過90款環球美食，涵蓋經典沙律、特色熱葷、精緻小食、滋味意粉飯類及甜品，滿足各種口味需求。無論是派對、公司聚餐或家庭聚會，這款套餐都能帶來極致美食享受，讓你的宴會更添驚喜與奢華！</p>
                     <h3 class="mt-6 title-md">服務與注意事項</h3>
                 </div>
             </div>
-            <div class="mt-6 lg:mt-0">
+            <div class="mt-6 lg:mt-0 px-4 lg:px-0">
                 <div class="flex flex-wrap lg:flex-col items-center lg:items-start gap-2 mb-3">
                     <badge class="bg-[#212121] text-[#FFC300]">70% OFF</badge>
                     <h1 class="title-lg font-bold">日夜經典到會套餐 120人 </h1>
@@ -34,7 +34,7 @@
                         免運費
                     </span>
                 </div>
-                <div class="flex items-center gap-3 lg:gap-5 mt-5 text-sm">
+                <div class="flex items-center flex-wrap gap-2 lg:gap-5 mt-5 text-sm">
                     <badge class="bg-[#FFFAEA] text-[#212121] badge-2 whitespace-nowrap">🏠家庭聚餐</badge>
                     <badge class="bg-[#FFFAEA] text-[#212121] badge-2 whitespace-nowrap">☕️下午茶</badge>
                     <badge class="bg-[#FFFAEA] text-[#212121] badge-2 whitespace-nowrap">📅公司茶聚</badge>
@@ -50,20 +50,26 @@
                     </badge>
                 </div>
                 <div class="mt-8 flex flex-col gap-4">
-                    <div v-for="box in optionBox" class="title-box bg-[#F8F8F8] text-[#212121] p-[17px] border border-[#E0E0E0] rounded-xl flex items-center gap-3">
+                    <div v-for="(box, index) in optionBox" :key="index" class="title-box bg-[#F8F8F8] text-[#212121] p-[17px] border border-[#E0E0E0] rounded-xl flex items-center gap-3">
                         <span class="text-white bg-[#212121] rounded-lg px-3 py-1">9選6</span>
                         廚師秘制沙律
                         <badge class="border-2 border-[#FFC300] gap-2 ml-auto">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13C3.68629 13 1 10.3137 1 7Z" fill="#FFC300" stroke="#FFC300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.67442 10L4.77519 9.32258L5.78295 7.53226L4 6.70968L4.34109 5.6129L6.24806 6.08065L6.43411 4H7.56589L7.73643 6.08065L9.65891 5.6129L10 6.70968L8.18605 7.53226L9.22481 9.32258L8.32558 10L7.00775 8.40323L5.67442 10Z" fill="#212121"/></svg>
                             必選
                         </badge>
+                        <Popup v-model="showPopup"> v   
+                            Hello Modal {{ index }}
+                        </Popup>
                     </div>
                 </div>
             </div>
         </div> 
     </Layout>
     <sideWidgets class="fixed right-0 lg:right-5 top-14 lg:top-[50%] lg:translate-y-[-50%] z-50" />
-    <inputCount class="w-[124px]"/>
+    <div class="flex gap-3 fixed w-full bottom-0 py-5 justify-center bottom__panel lg:hidden">
+        <inputCount class="w-[124px]"/>
+        <buttonMain>立即落單</buttonMain>
+    </div>
 </template>
 
 <script>
@@ -71,6 +77,8 @@
     import sideWidgets from '@/components/UI/sideWidgets.vue';
     import addSlide from '@/components/UI/addSlide.vue';
     import inputCount from '@/components/UI/inputCount.vue';
+    import buttonMain from '@/components/UI/buttonMain.vue';
+    import Popup from '@/components/UI/popup.vue';
 
     const optionBox = ref([
         {
@@ -98,11 +106,20 @@
             badgeTitle2:"必選",
         }
     ]);
-    export default {
 
+    export default{
+        components:{
+            Popup
+        },
+        data(){
+            return{
+                showPopup:false
+            }
+        }
     }
 </script>
-<style lang="">
-
-
+<style>
+    .bottom__panel{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 13.82%, #FFFFFF 100%);
+    }
 </style> 

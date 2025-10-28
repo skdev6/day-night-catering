@@ -1,0 +1,22 @@
+.form__checkbox {
+    width: 1em;
+    height: 1em;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position:50% 60%;
+    background-size: 0.6em;
+    border: 1px solid #212121;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+    border-radius:.2em;
+    font-size:20px; 
+} 
+.form__checkbox:checked{
+    background-color: #212121;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.66667L4.80769 7L10 1' stroke='%23FFC300' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}  
