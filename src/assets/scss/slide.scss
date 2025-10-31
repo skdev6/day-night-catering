@@ -1,0 +1,29 @@
+.swiper .swiper-button-prev, .swiper .swiper-button-next {
+    z-index: 50;
+    background-color: #fff;
+    border-radius: 500px;
+    border: 1px solid #E0E0E0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    width: 40px;
+    height: 40px;
+    font-size:10px;   
+    color: #000000;   
+} 
+.swiper .swiper-button-prev svg, .swiper .swiper-button-next svg{
+    width: 1em;
+    height: auto;
+}
+.swiper .swiper-button-prev svg path, .swiper .swiper-button-next svg path{
+    fill: currentColor; 
+}
+.nav-none .swiper-button-prev, .nav-none .swiper-button-next {
+    display: none;
+} 
+.swiper-button-next,.swiper-button-prev{
+    transition:var(--base-transition);
+}
+.swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+}

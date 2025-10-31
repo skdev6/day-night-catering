@@ -1,6 +1,6 @@
 <template>
-    <a v-if="href" :href="href" class="btn__main inline-flex items-center"><slot/></a>
-    <button v-else class="btn__main inline-flex items-center"><slot/></button>
+    <a v-if="href" :href="href" class="btn__main inline-flex items-center justify-center"><slot/></a>
+    <button v-else class="btn__main inline-flex items-center justify-center"><slot/></button>
 </template>
 <script>
 export default {

@@ -6,17 +6,20 @@
 
 <template>                                                                                                                                                                                                                                                                                                                                                             
     <Layout>                                                                                                                                                                                                                                                                                                                                                             
-        <div class="lg:grid container lg:px-4 mx-auto grid-cols-2 gap-x-14 ff-noto pt-14">
-            <div class="w-full">
+        <div class="lg:grid container lg:px-4 mx-auto grid-cols-5 gap-x-14 ff-noto py-14">
+            <!-- Left Content -->
+            <div class="w-full col-span-3">
                 <productGallery class="hidden lg:block nav-none" thumbDirection="vertical"/>
                 <productGallery class="lg:hidden"/>
-                <div class="px-4 lg:px-0 hidden lg:block">
-                    <h3 class="mt-6 title-md">產品介紹</h3>                                                                                                                                                                                                                                                                                                                                                             
-                    <p>套餐附送相應人數餐具 (叉，紙碟，紙巾，食物夾)【2025皇牌之選】日夜經典到會套餐，精選超過90款環球美食，涵蓋經典沙律、特色熱葷、精緻小食、滋味意粉飯類及甜品，滿足各種口味需求。無論是派對、公司聚餐或家庭聚會，這款套餐都能帶來極致美食享受，讓你的宴會更添驚喜與奢華！</p>
-                    <h3 class="mt-6 title-md">服務與注意事項</h3>
-                </div>
+                <div class="mt-9 px-4 lg:px-0 hidden lg:block">
+                    <ProductDescription/>
+                </div> 
+                <ProductSmallSlide :products="productDetails" title="可以搭配的產品" class="mt-9"/>
+                <ProductSmallSlide :products="productDetails" title="你可能喜歡" class="mt-9"/>
+                <ProductSmallSlide :products="productDetails" title="你可能喜歡" class="mt-9"/>
             </div>
-            <div class="mt-6 lg:mt-0 px-4 lg:px-0">
+            <!-- Right Content -->
+            <div class="mt-6 lg:mt-0 px-4 lg:px-0 col-span-2">
                 <div class="flex flex-wrap lg:flex-col items-center lg:items-start gap-2 mb-3">
                     <badge class="bg-[#212121] text-[#FFC300]">70% OFF</badge>
                     <h1 class="title-lg font-bold">日夜經典到會套餐 120人 </h1>
@@ -50,16 +53,16 @@
                     </badge>
                 </div>
                 <div class="mt-8 flex flex-col gap-4">
-                    <div v-for="(box, index) in optionBox" :key="index" class="title-box bg-[#F8F8F8] text-[#212121] p-[17px] border border-[#E0E0E0] rounded-xl flex items-center gap-3">
-                        <span class="text-white bg-[#212121] rounded-lg px-3 py-1">9選6</span>
-                        廚師秘制沙律
-                        <badge class="border-2 border-[#FFC300] gap-2 ml-auto">
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13C3.68629 13 1 10.3137 1 7Z" fill="#FFC300" stroke="#FFC300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.67442 10L4.77519 9.32258L5.78295 7.53226L4 6.70968L4.34109 5.6129L6.24806 6.08065L6.43411 4H7.56589L7.73643 6.08065L9.65891 5.6129L10 6.70968L8.18605 7.53226L9.22481 9.32258L8.32558 10L7.00775 8.40323L5.67442 10Z" fill="#212121"/></svg>
-                            必選
-                        </badge>
-                        <Popup v-model="showPopup"> v   
-                            Hello Modal {{ index }}
-                        </Popup>
+                    <InlineCard
+                        v-for="(box, index) in optionBox" 
+                        :key="index" 
+                        :title="box.title" 
+                        :count="box.count" 
+                        :badgeTitle="box.badgeTitle"
+                    />
+                    <div class="bottom__panel gap-3 w-full py-5 justify-center hidden lg:inline-flex p-4 border border-[#E0E0E0] rounded-xl">
+                        <inputCount class="w-[185px]"/>
+                        <buttonMain class="w-full">立即落單</buttonMain>
                     </div>
                 </div>
             </div>
@@ -79,32 +82,169 @@
     import inputCount from '@/components/UI/inputCount.vue';
     import buttonMain from '@/components/UI/buttonMain.vue';
     import Popup from '@/components/UI/popup.vue';
+    import ProductSmallSlide from '@/components/UI/productSmallSlide.vue';
+    import productThumbnail from "@/assets/img/prod-img.png";
+    import InlineCard from '@/components/UI/inlineCard.vue';
+import ProductDescription from '@/components/UI/productDescription.vue';
 
     const optionBox = ref([
         {
             id:1,
             title:"廚師秘制沙律",
-            badgeTitle:"9選6",
-            badgeTitle2:"必選",
+            count:"9選6",
+            badgeTitle:"必選",
         },
         {
             id:1,
             title:"廚師秘制沙律",
-            badgeTitle:"9選6",
-            badgeTitle2:"必選",
+            count:"5選1",
+            badgeTitle:"必選",
         },
         {
             id:1,
             title:"廚師秘制沙律",
-            badgeTitle:"9選6",
-            badgeTitle2:"必選",
+            count:"9選6",
+            badgeTitle:"必選",
         },
         {
             id:1,
             title:"廚師秘制沙律",
-            badgeTitle:"9選6",
-            badgeTitle2:"必選",
+            count:"9選6",
+            badgeTitle:"必選",
+        },
+        {
+            id:1,
+            title:"廚師秘制沙律",
+            count:"5選1",
+            badgeTitle:"必選",
+        },
+        {
+            id:1,
+            title:"廚師秘制沙律",
+            count:"9選6",
+            badgeTitle:"必選",
+        },
+        {
+            id:1,
+            title:"廚師秘制沙律",
+            count:"9選6",
+            badgeTitle:"必選",
+        },
+        {
+            id:1,
+            title:"廚師秘制沙律",
+            count:"9選6",
+            badgeTitle:"必選",
+        },
+        {
+            id:1,
+            title:"廚師秘制沙律",
+            count:"5選1",
+            badgeTitle:"必選",
+        },
+        {
+            id:1,
+            title:"廚師秘制沙律",
+            count:"9選6",
+            badgeTitle:"必選",
+        },
+        {
+            id:1,
+            title:"廚師秘制沙律",
+            count:"9選6",
+            badgeTitle:"必選",
         }
+    ]);
+
+    const productDetails = ref([
+        {
+            id:1,
+            title:"日夜經典到會套餐 120人",
+            price:"$16560",
+            priceSm:"$19733",
+            badgeTitle:"70% OFF",
+            count:120,
+            freeShip:true,
+            tags:["🏠家庭聚餐","☕️下午茶","📅公司茶聚","🥣午餐會"],
+            thumbnail:productThumbnail,
+        },
+        {
+            id:2,
+            title:"日夜經典到會套餐 120人",
+            price:"$16560",
+            priceSm:"$19733",
+            badgeTitle:"70% OFF",
+            count:120,
+            freeShip:true,
+            tags:["🏠家庭聚餐","☕️下午茶","📅公司茶聚","🥣午餐會"],
+            thumbnail:productThumbnail,
+        },
+        {
+            id:3,
+            title:"日夜經典到會套餐 120人",
+            price:"$16560",
+            priceSm:"$19733",
+            badgeTitle:"70% OFF",
+            count:120,
+            freeShip:true,
+            tags:["🏠家庭聚餐","☕️下午茶","📅公司茶聚","🥣午餐會"],
+            thumbnail:productThumbnail,
+        },
+        {
+            id:4,
+            title:"日夜經典到會套餐 120人",
+            price:"$16560",
+            priceSm:"$19733",
+            badgeTitle:"70% OFF",
+            count:120,
+            freeShip:true,
+            tags:["🏠家庭聚餐","☕️下午茶","📅公司茶聚","🥣午餐會"],
+            thumbnail:productThumbnail,
+        },
+        {
+            id:1,
+            title:"日夜經典到會套餐 120人",
+            price:"$16560",
+            priceSm:"$19733",
+            badgeTitle:"70% OFF",
+            count:120,
+            freeShip:true,
+            tags:["🏠家庭聚餐","☕️下午茶","📅公司茶聚","🥣午餐會"],
+            thumbnail:productThumbnail,
+        },
+        {
+            id:2,
+            title:"日夜經典到會套餐 120人",
+            price:"$16560",
+            priceSm:"$19733",
+            badgeTitle:"70% OFF",
+            count:120,
+            freeShip:true,
+            tags:["🏠家庭聚餐","☕️下午茶","📅公司茶聚","🥣午餐會"],
+            thumbnail:productThumbnail,
+        },
+        {
+            id:3,
+            title:"日夜經典到會套餐 120人",
+            price:"$16560",
+            priceSm:"$19733",
+            badgeTitle:"70% OFF",
+            count:120,
+            freeShip:true,
+            tags:["🏠家庭聚餐","☕️下午茶","📅公司茶聚","🥣午餐會"],
+            thumbnail:productThumbnail,
+        },
+        {
+            id:4,
+            title:"日夜經典到會套餐 120人",
+            price:"$16560",
+            priceSm:"$19733",
+            badgeTitle:"70% OFF",
+            count:120,
+            freeShip:true,
+            tags:["🏠家庭聚餐","☕️下午茶","📅公司茶聚","🥣午餐會"],
+            thumbnail:productThumbnail,
+        },
     ]);
 
     export default{
@@ -122,4 +262,4 @@
     .bottom__panel{
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 13.82%, #FFFFFF 100%);
     }
-</style> 
+</style>
