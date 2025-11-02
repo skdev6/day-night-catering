@@ -1,0 +1,35 @@
+.arrow-btn{
+    height: 48px;
+    width: 48px;
+    z-index: 5;
+    position: relative; 
+    &::before{
+        content: "";
+        background-color: #212121; 
+        inset: 0;
+        z-index: -1;
+        border-radius: 5px; 
+        position: absolute; 
+        transition: var(--base-transition);
+    }
+    .arrow-secondary{
+        transform: translateX(-100%); 
+    }
+    .arrow-primary,.arrow-secondary,.icon{
+        transition: var(--base-transition);
+    }
+    &:hover{
+        &::before{
+            transform: scale(1.1); 
+        }
+        .arrow-secondary{
+            transform: translateX(0%); 
+        }
+        .arrow-primary{
+            transform: translateX(100%);   
+        }
+        .icon{
+            transform: rotate(-45deg);
+        }
+    }
+}

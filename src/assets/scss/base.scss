@@ -1,5 +1,6 @@
 :root{
     --base-transition:all .2s cubic-bezier(0.32, 0.51, 0.21, 1.28);
+    --base-transition-easy:all .15s ease-out; 
 }
 .rounded-corner {
     border-radius: 10px 0 10px 0;

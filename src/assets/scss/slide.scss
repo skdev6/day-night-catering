@@ -27,3 +27,16 @@
     visibility: hidden;
     transform: scale(0);
 }
+.slide-nav-wrap{
+    li{
+        color: #757575; 
+        transition:var(--base-transition-easy);
+    }
+    li.active,li:hover{
+        background-color: #F7F7F7;
+        color: #212121; 
+    }
+    li.active{
+        font-weight: 600;
+    }
+}

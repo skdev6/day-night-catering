@@ -1,5 +1,5 @@
 <template>
-    <header class="header__area relative"> 
+    <header class="header__area relative z-9999"> 
         <div class="bg-white pt-[60px] border-b border-b-[#E0E0E0] z-10">
             <div class="container mx-auto">
                 <div class="flex items-center relative justify-end">
@@ -51,12 +51,12 @@
                 </ul>
             </div>
         </div>
-        <div id="megamenu-1" class="megamenu-wrap absolute bottom-0 left-0 w-full -z-10 translate-y-full">
-            <div class="container">
+        <div id="megamenu-1" class="megamenu-wrap bg-white absolute bottom-0 left-0 w-full -z-10 translate-y-full">
+            <div class="container mx-auto py-9">
                 <slideByCat/>
             </div>
         </div>
-        <div id="megamenu-2" class="megamenu-wrap absolute bottom-0 left-0 w-full -z-10">
+        <div id="megamenu-2" class="megamenu-wrap bg-white absolute bottom-0 left-0 w-full -z-10">
 
         </div>
     </header>
