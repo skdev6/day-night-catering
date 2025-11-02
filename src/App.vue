@@ -4,5 +4,5 @@
 </script>
 
 <template>
-    <productDetails/>
+    <addToCart/>
 </template>

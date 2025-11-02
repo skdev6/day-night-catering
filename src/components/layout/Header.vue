@@ -40,8 +40,10 @@
                         v-for="(nav, index) in navItems"
                         :key="index"
                         :class="nav?.subMenu ? 'has-sub-menu' : ''"
+                        @mouseenter="(e) => openMegamenu(e, nav?.subMenuId)"
+                        @mouseleave="handleMouseLeave"
                     >
-                        <a :href="nav.url" @mouseenter="(e)=>openMegamenu(e, nav?.subMenuId || '#null-id')" @mouseleave="removeMegamenu">
+                        <a :href="nav.url">
                             {{ nav.name }}
                             <svg v-if="nav.subMenu" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.70703 0.707109L4.70703 4.70711L0.707031 0.707108" stroke="#212121" stroke-width="2" stroke-linejoin="round"/>
@@ -51,52 +53,67 @@
                 </ul>
             </div>
         </div>
-        <div id="megamenu-1" class="megamenu-wrap bg-white absolute bottom-0 left-0 w-full -z-10">
+        <div id="megamenu-1" class="megamenu-wrap bg-white absolute bottom-0 left-0 w-full -z-10"
+            @mouseenter="cancelHide"
+            @mouseleave="removeMegamenu"
+        >
             <div class="container mx-auto py-9">
                 <slideByCat/>
             </div>
         </div>
-        <div id="megamenu-2" class="megamenu-wrap bg-white absolute bottom-0 left-0 w-full -z-10">
+        <div id="megamenu-2" class="megamenu-wrap bg-white absolute bottom-0 left-0 w-full -z-10"
+            @mouseenter="cancelHide"
+            @mouseleave="removeMegamenu"
+        >
 
         </div>
     </header>
 </template>
 <script setup>
-import logo from "@/assets/img/logo.svg"
-import slideByCat from "../UI/slideByCat.vue";
-import {ref, onMounted} from 'vue';
-const navItemsRef = ref([]);
+    import logo from "@/assets/img/logo.svg";
+    import slideByCat from "../UI/slideByCat.vue";
+    import { ref } from "vue";
 
-const navItems = [
-    {name:"家庭聚會", url:"#", subMenu:false, subMenuId:12},
-    {name:"商務活動", url:"#", subMenu:false, subMenuId:12},
-    {name:"到會單點", url:"#", subMenu:false, subMenuId:12},
-    {name:"到會套餐", url:"#", subMenu:false, subMenuId:"#v12"},
-    {name:"到會活動", url:"#", subMenu:false, subMenuId:12},
-    {name:"BBQ燒烤", url:"#", subMenu:true, subMenuId:"#megamenu-1"},
-    {name:"小朋友生日會", url:"#", subMenu:true, subMenuId:"#megamenu-2"},
-    {name:"到會餐單", url:"#", subMenu:false, subMenuId:12},
-    {name:"周邊產品", url:"#", subMenu:false, subMenuId:12},
-    {name:"客人回圖", url:"#", subMenu:false, subMenuId:12},
-    {name:"聯絡我們", url:"#", subMenu:false, subMenuId:12},
-]
+    const navItems = [
+    { name: "家庭聚會", url: "#", subMenu: false },
+    { name: "商務活動", url: "#", subMenu: false },
+    { name: "到會單點", url: "#", subMenu: false },
+    { name: "到會套餐", url: "#", subMenu: false },
+    { name: "到會活動", url: "#", subMenu: false },
+    { name: "BBQ燒烤", url: "#", subMenu: true, subMenuId: "#megamenu-1" },
+    { name: "小朋友生日會", url: "#", subMenu: true, subMenuId: "#megamenu-2" },
+    { name: "到會餐單", url: "#", subMenu: false },
+    { name: "周邊產品", url: "#", subMenu: false },
+    { name: "客人回圖", url: "#", subMenu: false },
+    { name: "聯絡我們", url: "#", subMenu: false },
+    ];
 
-onMounted(()=>{
-    // console.log(navItemsRef);
-});
+    let hideTimeout = null;
 
-function openMegamenu(e, menuId){ 
-    var nav = e.target;
-    if(/^[#.a-zA-Z]/.test(menuId)){
-        var megaMenu = document.querySelector(menuId?.toString());
-        if(megaMenu){
-            removeMegamenu();
+    function openMegamenu(e, menuId) {
+    if (!menuId) return;
+    clearTimeout(hideTimeout);
+
+    const megaMenu = document.querySelector(menuId);
+        if (megaMenu) {
+            document.querySelectorAll(".megamenu-wrap.active").forEach((el) => {
+            el.classList.remove("active");
+            });
             megaMenu.classList.add("active");
         }
     }
-}
-function removeMegamenu(){
-    document.querySelectorAll(".megamenu-wrap").forEach((el)=>el.classList.remove("active"));
-}
+    function handleMouseLeave() {
+        hideTimeout = setTimeout(() => {
+            removeMegamenu();
+        }, 100); 
+    }
+    function removeMegamenu() {
+    document
+        .querySelectorAll(".megamenu-wrap.active")
+        .forEach((el) => el.classList.remove("active"));
+    }
 
+    function cancelHide() {
+        clearTimeout(hideTimeout);
+    }
 </script>
