@@ -28,3 +28,9 @@
         }
     }
 }   
+.megamenu-wrap{
+    transition:var(--base-transition-easy);
+    &.active{
+        transform: translateY(100%);
+    }
+}

@@ -1,10 +1,10 @@
 :root{
-    --base-transition:all .2s cubic-bezier(0.32, 0.51, 0.21, 1.28);
-    --base-transition-easy:all .15s ease-out; 
+    --base-transition:all .25s cubic-bezier(0.32, 0.51, 0.21, 1.28);
+    --base-transition-easy:all .3s cubic-bezier(0.19, 1, 0.22, 1); 
 }
 .rounded-corner {
     border-radius: 10px 0 10px 0;
 }
 .text-green{
     color: #FFB378;
-}
+} 

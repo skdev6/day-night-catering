@@ -51,7 +51,7 @@
                 </ul>
             </div>
         </div>
-        <div id="megamenu-1" class="megamenu-wrap bg-white absolute bottom-0 left-0 w-full -z-10 translate-y-full">
+        <div id="megamenu-1" class="megamenu-wrap bg-white absolute bottom-0 left-0 w-full -z-10">
             <div class="container mx-auto py-9">
                 <slideByCat/>
             </div>
