@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="inline-slide-wrapper">
     <div class="flex items-center" v-if="title != ''">
         <h2 class="title-lg font-medium mb-4">{{title}}</h2>
     </div>
@@ -10,12 +10,8 @@
       navigation
       :breakpoints="{
             0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            },
-            550: {
                 slidesPerView: 2,
-                spaceBetween: 20,
+                spaceBetween: 10
             },
             767: {
                 slidesPerView: 3,

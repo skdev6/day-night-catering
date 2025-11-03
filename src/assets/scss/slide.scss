@@ -40,3 +40,12 @@
         font-weight: 600;
     }
 }
+.inline-slide-wrapper{
+    @media (max-width:991px){
+        overflow: hidden;
+        .swiper{
+            overflow: initial;
+            padding-right:60px; 
+        }
+    }
+}

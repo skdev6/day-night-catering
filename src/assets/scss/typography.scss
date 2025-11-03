@@ -1,0 +1,36 @@
+body {
+	font-family: "Noto Sans HK", sans-serif;
+}
+.ff-noto {
+	font-family: "Noto Sans HK", sans-serif;
+}
+.title-xl {
+	font-size: 29px;
+	line-height: 120%;
+}
+.title-lg {
+	font-size: 24px;
+	line-height: 36px;
+}
+.title-md {
+	font-size: 20px;
+	line-height: 36px;
+}
+.title-md2 {
+	font-size: 14px;
+	line-height: 130%;
+}
+.text-sm {
+	font-size: 12px;
+	line-height: 18px;
+}
+@media (max-width: 991px) {
+	.title-lg {
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.title-md {
+		font-size: 18px;
+		line-height: 30px;
+	}
+}

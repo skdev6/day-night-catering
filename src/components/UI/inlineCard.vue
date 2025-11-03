@@ -178,7 +178,7 @@
         },
     ]);
     const props = defineProps({
-        title: Number,
+        title: Number,    
         count:String,
         badgeTitle:String
     });
