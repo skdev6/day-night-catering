@@ -109,7 +109,7 @@
 			</div>
 			<div class="w-full max-w-[1580px] mx-auto! px-[16px]! mt-[8px]! relative">
 				<nav class="navbar" :class="{ 'navbar-active': isNavbarActive }">
-					<div class="item__content-intro">
+					<div class="item__content-intro [@media(min-width:1200px)]:hidden">
 						<div class="intro-inner">
 							<div class="rgc">
 								<span>D</span>
