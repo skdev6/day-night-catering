@@ -16,9 +16,13 @@ body {
 	font-size: 20px;
 	line-height: 36px;
 }
-.title-md2 {
+.title-h4{
+	font-size:17px; 
+	line-height: 25px; 
+}
+.title-md2,.title-h5{
 	font-size: 14px;
-	line-height: 130%;
+	line-height: 150%;
 }
 .text-sm {
 	font-size: 12px;
@@ -32,5 +36,12 @@ body {
 	.title-md {
 		font-size: 18px;
 		line-height: 30px;
+	}
+	.title-h4 {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.title-md2, .title-h5 {
+		font-size: 13px;
 	}
 }

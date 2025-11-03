@@ -2,7 +2,7 @@
   <div
     ref="parentRef"
     :class="[
-      'input__number flex items-center justify-center bg-[#FFFAEA] border-2 rounded-xl p-3 border-[#FFC300] transition',
+      'input__number flex items-center justify-center bg-[#FFFAEA] border-1 rounded-xl p-3 border-[#FFC300] transition',
       customClass
     ]"
   >
@@ -104,7 +104,7 @@ watch(localValue, updateClasses);
 onMounted(updateClasses);
 </script>
 
-<style scoped>
+<style lang="scss">
 .count-small {
     border-color: transparent;
     background-color: transparent;
@@ -128,4 +128,32 @@ onMounted(updateClasses);
 .count-small .count-btn svg path {
     stroke: #767676;
 }
+.count-sm.input__number{
+  padding:6px 9px;
+  max-width: 75px;
+  border-radius: 4px;
+  .count-btn {
+      width: auto; 
+      background-color: transparent;
+      border-color: transparent;
+      height: auto;
+      svg{
+        width: 10px;
+      }
+  }
+  &.count-outline-gray{
+    background-color: transparent;
+    border-color: #D9D9D9;
+    button{
+      svg{
+        path{
+          stroke: #1E1E1E;
+        }
+      }
+    }
+  }
+}
+.count-small,.count-sm{
+  font-size: 14px; 
+} 
 </style>

@@ -2,7 +2,7 @@
 	<header
 		class="header__area fixed z-9999 top-0 left-0 right-0 w-full bg-white"
 	>
-		<div class="bg-white xl:pt-[60px] border-b border-b-[#E0E0E0] z-10">
+		<div class="bg-white border-b border-b-[#E0E0E0] z-10">
 			<div
 				class="w-full max-w-[1580px] mx-auto! px-[16px]! py-[10px]! [@media(min-width:576px)]:pt-[48px]! [@media(min-width:576px)]:pb-[20px]! relative"
 			>
