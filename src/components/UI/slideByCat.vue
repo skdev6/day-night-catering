@@ -12,7 +12,7 @@
                         <h4 class="title-xl mb-2">{{cat.name}}</h4>
                         <p>{{cat.description}}</p>
                     </div>
-                    <a :href="cat.url" class="arrow-btn flex items-center justify-center">
+                    <RouterLink :to="cat.url" class="arrow-btn flex items-center justify-center">
                         <span class="icon block relative overflow-hidden">
                             <svg  class="arrow-primary" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.3333 1L17 8M17 8L10.3333 15M17 8L1 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -21,13 +21,14 @@
                                 <path d="M10.3333 1L17 8M17 8L10.3333 15M17 8L1 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
-                    </a>
+                    </RouterLink>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script setup>
+import { RouterLink } from "vue-router";
     import banner from "@/assets/img/prod-img.png";
     const categories = [
         {

@@ -1,11 +1,10 @@
 <template>
-    <a v-if="href" :href="href" class="btn__main inline-flex items-center justify-center"><slot/></a>
+    <RouterLink v-if="href" :to="href" class="btn__main inline-flex items-center justify-center"><slot/></RouterLink>
     <button v-else class="btn__main inline-flex items-center justify-center"><slot/></button>
 </template>
 <script>
-export default {
-    
-}
+import { RouterLink } from 'vue-router';
+
 </script>
 <style>
     .btn__main {

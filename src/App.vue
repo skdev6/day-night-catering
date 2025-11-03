@@ -1,8 +1,16 @@
 <script setup>
-  import productDetails from './pages/productDetails.vue'
-  import addToCart from './pages/addToCart.vue';
+import Header from "./components/layout/Header.vue";
+import Footer from "./components/layout/Footer.vue";
 </script>
 
 <template>
-    <addToCart/>
+	<div class="layout__area">
+		<Header />
+
+		<main class="layout__content">
+			<RouterView />
+		</main>
+
+		<Footer />
+	</div>
 </template>

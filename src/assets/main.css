@@ -1,41 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap");
 @import "tailwindcss";
-img{
-    max-width: 100%; 
+img {
+	max-width: 100%;
 }
-body{
-    font-family: "Noto Sans HK", sans-serif; 
+body {
+	font-family: "Noto Sans HK", sans-serif;
 }
-.ff-noto{
-    font-family: "Noto Sans HK", sans-serif; 
+.ff-noto {
+	font-family: "Noto Sans HK", sans-serif;
 }
-.title-xl{
-    font-size: 29px;
-    line-height: 120%; 
+.title-xl {
+	font-size: 29px;
+	line-height: 120%;
 }
-.title-lg{
-    font-size: 24px;
-    line-height: 36px;
+.title-lg {
+	font-size: 24px;
+	line-height: 36px;
 }
-.title-md{
-    font-size: 20px;
-    line-height: 36px;
+.title-md {
+	font-size: 20px;
+	line-height: 36px;
 }
-.title-md2{
-    font-size: 14px;
-    line-height: 130%; 
+.title-md2 {
+	font-size: 14px;
+	line-height: 130%;
 }
-.text-sm{
-    font-size: 12px;
-    line-height: 18px;
+.text-sm {
+	font-size: 12px;
+	line-height: 18px;
 }
-@media (max-width:991px){
-    .title-lg{
-        font-size: 20px;
-        line-height: 30px;
-    }
-    .title-md{
-        font-size: 18px;
-        line-height: 30px;
-    }
+@media (max-width: 991px) {
+	.title-lg {
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.title-md {
+		font-size: 18px;
+		line-height: 30px;
+	}
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+
+	&::-moz-selection {
+		color: #ffffff;
+		background-color: #1770c8;
+	}
+
+	&::selection {
+		color: #ffffff;
+		background-color: #1770c8;
+	}
+}
+
+a,
+button {
+	cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+img {
+    display: inline-block;
 }

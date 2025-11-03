@@ -1,9 +1,10 @@
 <template>
-    <a v-if="href" :href="href" class="badge inline-flex items-center"><slot/></a>
+    <RouterLink v-if="href" :to="href" class="badge inline-flex items-center"><slot/></RouterLink>
     <span v-else class="badge inline-flex items-center"><slot/></span>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
 export default {
   props: {
     title: String,
