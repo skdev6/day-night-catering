@@ -7,13 +7,13 @@
                         <h3 class="title-lg font-bold">購物車</h3>
                         <buttonMain class="btn-gray btn-sm">清空</buttonMain>
                     </div>
-                    <cartProduct
-                        v-for="cart in cartData"
-                        :title="cart.title"
-                        :thumbnail="cart.thumbnail"
+                    <productCart
+                        v-for="cart in products"
+                        :title="cart.name"
+                        :thumbnail="cart.image"
                         :components="cart.components"
                         :price="cart.price"
-                        :oldPrice="cart.oldPrice"
+                        :originalPrice="cart.originalPrice"
                     />
                 </div>
                 <div class="grid-span-1">
@@ -32,9 +32,9 @@
 <script setup>
 import buttonMain from '@/components/UI/buttonMain.vue';
 import product from "@/assets/img/product.webp";
-import cartProduct from '@/components/UI/cartProduct.vue';
-import cartData from '@/data/cartData';
-console.log(cartData);
+import productCart from '@/components/UI/productCart.vue';
+import products from '@/data/products';
+
 </script>
 <style>
     

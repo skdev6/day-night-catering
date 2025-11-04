@@ -1,31 +1,28 @@
 <template>
 	<header
-		class="header__area fixed z-9999 top-0 left-0 right-0 w-full bg-white"
+		class="header__area fixed z-9999 top-0 left-0 right-0 w-full bg-white xl:py-0"
 	>
 		<div class="bg-white border-b border-b-[#E0E0E0] z-10">
-			<div
-				class="w-full max-w-[1580px] mx-auto! px-[16px]! py-[10px]! [@media(min-width:576px)]:pt-[48px]! [@media(min-width:576px)]:pb-[20px]! relative"
-			>
-				<div
-					class="flex items-center justify-between [@media(min-width:1200px)]:justify-end"
-				>
+			<div class="w-full max-w-[1580px] mx-auto relative py-[18px] md:py-[30px] xl:pb-0 xl:pt-[45px]">
+				<!-- Header Top (Start) -->
+				<div class="flex items-center justify-between lg:justify-end relative px-4">
 					<button
-						class="w-[48px] h-[48px] rounded-full bg-[#F4F4F4] hover:bg-[#ede5e5]! inline-flex items-center justify-center [@media(min-width:1200px)]:hidden!"
+						class="w-[48px] h-[48px] rounded-full bg-[#F4F4F4] hover:bg-[#ede5e5] inline-flex items-center justify-center mr-auto xl:hidden"
 						@click="isNavbarActive = !isNavbarActive"
 					>
 						<i class="ph-bold ph-list text-[24px] text-black"></i>
 					</button>
-					<RouterLink
-						to="/"
-						class="logo inline-block outline-0 [@media(min-width:576px)]:absolute [@media(min-width:576px)]:left-[50%] [@media(min-width:576px)]:bottom-[0px]! [@media(min-width:576px)]:translate-x-[-50%]"
+					<a
+						href="/"
+						class="logo inline-block outline-0 absolute left-[50%] translate-x-[-50%]"
 						><img
 							:src="logo"
 							alt="Logo"
-							class="w-[64px] h-[64px] [@media(min-width:576px)]:w-[88px] [@media(min-width:576px)]:h-[88px]"
-					/></RouterLink>
+							class="w-[64px] md:w-[88px]"
+					/></a>
 					<div class="flex items-center gap-[8px]">
 						<ul class="navbar-icon list-none p-0 m-0 flex items-center">
-							<li class="[@media(max-width:576px)]:hidden">
+							<li class="max-md:hidden">
 								<button @click="showLanguageModal = true">
 									<span class="icon relative">
 										<svg
@@ -68,7 +65,7 @@
 									</span>
 								</button>
 							</li>
-							<li class="[@media(max-width:576px)]:hidden">
+							<li class="max-md:hidden">
 								<RouterLink to="/">
 									<span class="icon relative">
 										<svg
@@ -89,25 +86,27 @@
 							</li>
 						</ul>
 						<div
-							class="items-center gap-[8px] flex-wrap hidden [@media(min-width:1200px)]:flex"
-						>
-							<RouterLink
-								to="/"
+							class="items-center gap-[8px] flex-wrap hidden xl:flex"
+						> 
+							<a
+								href="/"
 								class="py-[14px]! px-[24px]! text-[14px] bg-[#ffffff] border border-solid border-[#212121] font-semibold rounded-[10px] transition-all ease-in-out duration-300 hover:bg-[#ede5e5] hover:text-[#212121] hover:border-[#e0e0e0]"
 							>
 								定製報價
-							</RouterLink>
-							<RouterLink
-								to="/"
+							</a>
+							<a
+								href="/"
 								class="py-[14px]! px-[24px]! text-[14px] bg-[#FFC300] border border-solid border-[#FFC300] font-semibold rounded-[10px] transition-all ease-in-out duration-300 hover:bg-[#ede5e5] hover:text-[#212121] hover:border-[#e0e0e0]"
 							>
 								立即落單
-							</RouterLink>
+							</a>
 						</div>
 					</div>
 				</div>
+				<!-- Header Top (End) -->
 			</div>
-			<div class="w-full max-w-[1580px] mx-auto! px-[16px]! mt-[8px]! relative">
+			<!-- Navbar (Start) -->
+			<div class="w-full max-w-[1580px] mx-auto! xl:px-[16px] xl:mt-[30px] relative">
 				<nav class="navbar" :class="{ 'navbar-active': isNavbarActive }">
 					<div class="item__content-intro [@media(min-width:1200px)]:hidden">
 						<div class="intro-inner">
@@ -124,8 +123,8 @@
 					<div class="navbar__inner">
 						<ul>
 							<li v-for="(item, index) in navItems" :key="index">
-								<RouterLink
-									:to="item.url"
+								<a
+									:href="item.url"
 									class="nav-item block"
 									@click.prevent="
 										toggleMenu =
@@ -134,7 +133,7 @@
 								>
 									{{ item.name }}
 									<i v-if="item.subMenu" class="ph-bold ph-caret-down"></i>
-								</RouterLink>
+								</a>
 								<!-- <MegaMenuOne
 									v-if="item.subMenuId === '#megamenu-1'"
 									:items="megaMenuItems"
@@ -157,6 +156,7 @@
 					@click="closeNavbar"
 				></div>
 			</div>
+			<!-- Navbar (End) -->
 		</div>
 	</header>
 	<SwitchLanguage
