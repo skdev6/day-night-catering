@@ -136,7 +136,7 @@
 import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
 import productsData from "@/data/products.js";
-import { defineProps, defineEmits } from "vue";
+import { defineEmits } from "vue";
 import one from "@/assets/img/payment/paypal.png";
 import two from "@/assets/img/payment/mastercard.png";
 import three from "@/assets/img/payment/visa.png";

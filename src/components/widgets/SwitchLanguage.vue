@@ -48,7 +48,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { defineProps, defineEmits } from "vue";
+import { defineEmits } from "vue";
 import language from "@/assets/img/language.png";
 
 const props = defineProps({

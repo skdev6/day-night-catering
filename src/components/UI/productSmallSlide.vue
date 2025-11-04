@@ -28,11 +28,11 @@
         :key="index"
       >
         <ProductSmallCard
-          :thumbnail="product.thumbnail"
-          :badgeTitle="product.badgeTitle"
-          :title="product.title"
+          :thumbnail="product.image"
+          :badgeTitle="product.labelSm"
+          :title="product.name"
           :price="product.price"
-          :priceSm="product.priceSm"
+          :priceSm="product.originalPrice"
         />
       </swiper-slide>
     </swiper>
@@ -41,7 +41,7 @@
 
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Pagination, FreeMode, Navigation } from "swiper/modules";
+import { FreeMode, Navigation } from "swiper/modules";
 import ProductSmallCard from "./productSmallCard.vue";
 // import {defineProps} from "vue"; 
 
