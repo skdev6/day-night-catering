@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-9 lg:pt-20">
+    <div class="py-9 lg:py-20 bg-[#F7F7F7]">
         <div class="container px-4 mx-auto">
             <div class="xl:grid xl:grid-cols-12 gap-5">
                 <div class="col-span-8">
@@ -36,7 +36,5 @@
     import ProductsTabByCat from '@/components/productsTabByCat.vue';
 </script>
 <style>
-    body{
-        background-color: #F7F7F7;
-    }
+    
 </style>
