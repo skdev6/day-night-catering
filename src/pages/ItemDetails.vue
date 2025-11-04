@@ -3,11 +3,9 @@
             <!-- Left Content -->
             <div class="w-full col-span-3">
                 <productGallery class="hidden lg:block nav-none" thumbDirection="vertical"/>
-                <productGallery class="lg:hidden"/>
-                <ProductDetailsRight class="lg:hidden pt-4 container-space"/>
-                <div class="mt-9 px-4 lg:px-0 hidden lg:block">
-                    <ProductDescription/>
-                </div> 
+                <productGallery class="lg:hidden mx-[-15px]"/>
+                <ProductDetailsRight class="lg:hidden pt-4 mb-6"/>
+                <ProductDescription/> 
                 <ProductSmallSlide :products="productsData" title="可以搭配的產品" class="mt-9 px-[16px] lg:px-0"/> 
                 <ProductSmallSlide :products="productsData" title="你可能喜歡" class="mt-9 px-[16px] lg:px-0"/>
                 <ProductSmallSlide :products="productsData" title="你可能喜歡" class="mt-9 px-[16px] lg:px-0"/>

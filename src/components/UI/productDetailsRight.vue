@@ -1,11 +1,11 @@
 <template lang="">
     <div>
-        <div class="flex flex-wrap lg:flex-col items-center lg:items-start gap-2 mb-3">
+        <div class="flex flex-wrap lg:flex-col items-center lg:items-start gap-2 mb-1">
             <Badge class="bg-[#212121] text-[#FFC300]">70% OFF</badge>
             <h1 class="title-lg font-bold">日夜經典到會套餐 120人 </h1>
         </div>
-        <h4 class="text-[18px] font-semibold text-[#EA3E3E]"><small>$</small>16560 <s class="text-[#616161] text-[14px]">$19733</s></h4>
-        <div class="flex items-center gap-5 my-4 text-sm">
+        <h4 class="title-lg font-semibold text-[#EA3E3E]"><small>$</small>16560 <s class="text-[#616161] text-[14px]">$19733</s></h4>
+        <div class="flex items-center gap-5 my-2 text-sm">
             <badge class="bg-[#FFDFD0] text-[#7E4A31] badge-2">幫你慳咗</badge>
             <span>$3173</span>
             <span class="flex items-center gap-1 text-[#616161]">
@@ -26,9 +26,9 @@
         <AddSlide class="mt-6"/>
         <hr class="text-[#E0E0E0] my-[30px]"/>
         <div class="flex items-center">
-            <h4 class="title-md">選擇菜式 <span class="text-[#616161] text-sm ml-2">還有<span class="text-[#212121]">12</span>個選項未選</span></h4>
-            <badge class="bg-[#F8F8F8] text-[#212121] ml-auto badge-lg border border-[#E0E0E0]">
-                <span class="absolute bottom-full translate-y-[20%] text-white bg-[#212121] left-0 rounded-corner p-1 text-sm">MENU</span>
+            <h4 class="title-md">選擇菜式 <span class="text-[#616161] text-sm ml-1">還有<span class="text-[#212121]">12</span>個選項未選</span></h4>
+            <badge class="bg-[#F8F8F8] text-[#212121] ml-auto badge-lg border relative rounded-corner border-[#E0E0E0]">
+                <badge class="absolute bottom-full translate-y-[30%] left-0 badge-sm rounded-corner text-white bg-[#212121]">MENU</badge>
                 查看餐單
             </badge>
         </div>

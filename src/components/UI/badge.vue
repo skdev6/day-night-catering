@@ -1,5 +1,5 @@
 <template>
-    <RouterLink v-if="href" :to="href" class="badge inline-flex items-center"><slot/></RouterLink>
+    <a v-if="href" :href="href" class="badge inline-flex items-center"><slot/></a>
     <span v-else class="badge inline-flex items-center"><slot/></span>
 </template>
 
@@ -13,20 +13,27 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
     .badge {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 12px;
+        line-height: 16px;
         text-align: center;
         padding: 2px 9px;
         border-radius: 4px;
         font-weight: 700;
-        position: relative;
+        &.badge-sm{
+          font-size: 10px;
+          padding: 2px 7px; 
+          line-height: 13px; 
+        }
+        &.rounded-corner {
+          border-radius: 8px 0 8px 0;
+        }
     }
     .badge-2{
       padding: 4px 12px;
     }
-  .badge-lg {
-      padding: 8px 11px;
-  }
+    .badge-lg {
+        padding: 8px 11px;
+    }
 </style>
