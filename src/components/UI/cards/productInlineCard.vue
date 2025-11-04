@@ -11,7 +11,7 @@
 </template>
 <script setup>
     import { onMounted } from 'vue';
-    import inputCount from '../inputCount.vue';
+    import inputCount from '../form/inputCount.vue';
     import { openGallery } from '@/components/useFancybox';
     
     const props = defineProps({

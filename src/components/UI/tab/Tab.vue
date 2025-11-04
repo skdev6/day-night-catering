@@ -29,7 +29,7 @@ const isActive = computed(() => active.value === props.value)
   </button>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .tab {
   background: none;
   border: none;
@@ -40,6 +40,7 @@ const isActive = computed(() => active.value === props.value)
   cursor: pointer;
   transition: all 0.2s ease;
   border-bottom: 2px solid transparent;
+  font-size: 14px;
 }
 
 .tab:hover {
@@ -49,6 +50,19 @@ const isActive = computed(() => active.value === props.value)
 .tab.active {
   color: #212121;
   border-bottom-color: #212121;
-  font-weight: 600;
+}
+
+.tab__btn{
+  .tab{
+    background-color: #F7F7F7;
+    padding: 8px;
+    border-radius: 4px;
+    color:#212121;
+    border: 1px solid transparent;
+    &.active{
+      background-color: #212121;
+      color: #fff; 
+    }
+  }
 }
 </style>

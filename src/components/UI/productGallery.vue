@@ -73,6 +73,7 @@
   import badge from "./badge.vue";
   import { openGallery, useFancybox } from "../useFancybox";
   import productBanner from "@/data/productBanner";
+  import { getUniqueId } from "@/helper/functions";
   const galleryRef = ref(null);
   const images = ref(productBanner);
 
@@ -93,7 +94,7 @@
 
   const isV = computed(() => props.thumbDirection === 'vertical')
 
-  const galleryId = `gallery-${Math.random().toString(36).substring(2, 9)}`;
+  const galleryId = `gallery-${getUniqueId()}`;
 
   useFancybox(galleryRef, `[data-fancybox="${galleryId}"]`, {
     loop: false,

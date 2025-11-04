@@ -54,7 +54,7 @@ import AddSlide from './addSlide.vue';
 import Badge from './badge.vue';
 import ButtonMain from './buttonMain.vue';
 import inlineCategoryCard from './cards/inlineCategoryCard.vue';
-import InputCount from './inputCount.vue';
+import InputCount from './form/inputCount.vue';
 import productCategories from '@/data/productCategories';
 import products from '@/data/products';
 import { getProductsByIds } from '@/helper/productHelper';

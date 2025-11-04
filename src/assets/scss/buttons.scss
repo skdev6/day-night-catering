@@ -81,4 +81,13 @@
                 background-color: #ede5e5;
             }
         }
+        &.btn-dark{
+            background-color: #212121;
+            color: #fff;
+            &:hover{
+                background-color: #e0e0e0;
+                border-color: #212121;
+                color: #212121;
+            }
+        }
     }

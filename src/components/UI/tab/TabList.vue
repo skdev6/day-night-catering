@@ -14,4 +14,10 @@
   margin: 0;
   padding: 0;
 }
+.tab__btn .tab-list{
+    gap: 10px;
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+    white-space: nowrap;
+}
 </style>

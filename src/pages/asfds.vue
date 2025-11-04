@@ -151,7 +151,7 @@ import badge from "@/components/UI/badge.vue";
 import { ref } from "vue";
 import sideWidgets from "@/components/UI/sideWidgets.vue";
 import addSlide from "@/components/UI/addSlide.vue";
-import inputCount from "@/components/UI/inputCount.vue";
+import inputCount from "@/components/UI/form/inputCount.vue";
 import buttonMain from "@/components/UI/buttonMain.vue";
 import Popup from "@/components/UI/popup/popup.vue";
 import ProductSmallSlide from "@/components/UI/productSmallSlide.vue";

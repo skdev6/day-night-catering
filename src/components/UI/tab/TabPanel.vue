@@ -31,9 +31,7 @@ const isActive = computed(() => active.value === props.value)
 
 .tab-panel.active {
   opacity: 1;
-  background: #f9fafb;
   border-radius: 8px;
-  padding: 16px;
 }
 
 @keyframes fadeIn {
