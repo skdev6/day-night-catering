@@ -3,7 +3,7 @@
 		class="header__area fixed z-9999 top-0 left-0 right-0 w-full bg-white xl:py-0"
 	>
 		<div class="bg-white border-b border-b-[#E0E0E0] z-10">
-			<div class="w-full max-w-[1580px] mx-auto relative py-[18px] md:py-[30px] xl:pb-0 xl:pt-[45px]">
+			<div class="w-full container-fluid mx-auto relative py-[18px] md:py-[30px] xl:pb-0 xl:pt-[45px]">
 				<!-- Header Top (Start) -->
 				<div class="flex items-center justify-between lg:justify-end relative px-4">
 					<button
@@ -106,9 +106,9 @@
 				<!-- Header Top (End) -->
 			</div>
 			<!-- Navbar (Start) -->
-			<div class="w-full max-w-[1580px] mx-auto! xl:px-[16px] xl:mt-[30px] relative">
-				<nav class="navbar" :class="{ 'navbar-active': isNavbarActive }">
-					<div class="item__content-intro [@media(min-width:1200px)]:hidden">
+			<div class="w-full container mx-auto! xl:px-[16px] xl:mt-[30px] relative">
+				<nav class="navbar w-full" :class="{ 'navbar-active': isNavbarActive }">
+					<div class="item__content-intro xl:hidden">
 						<div class="intro-inner">
 							<div class="rgc">
 								<span>D</span>
@@ -122,30 +122,17 @@
 					</div>
 					<div class="navbar__inner">
 						<ul>
-							<li v-for="(item, index) in navItems" :key="index">
+							<li v-for="(item, index) in navItems" :key="index"
+								@mouseenter="(e) => openMegamenu(e, item?.subMenuId)"
+								@mouseleave="handleMouseLeave"
+							>
 								<a
 									:href="item.url"
-									class="nav-item block"
-									@click.prevent="
-										toggleMenu =
-											toggleMenu === item.subMenuId ? null : item.subMenuId
-									"
+									class="nav-item flex gap-1 items-center"
 								>
 									{{ item.name }}
 									<i v-if="item.subMenu" class="ph-bold ph-caret-down"></i>
 								</a>
-								<!-- <MegaMenuOne
-									v-if="item.subMenuId === '#megamenu-1'"
-									:items="megaMenuItems"
-									:isActive="
-										activeMenu === '#megamenu-1' || toggleMenu === '#megamenu-1'
-									"
-								/>
-								<MegaMenuTwo v-if="item.subMenuId === '#megamenu-2'"
-									
-									:isActive="
-										activeMenu === '#megamenu-2' || toggleMenu === '#megamenu-2'
-									" /> -->
 							</li>
 						</ul>
 					</div>
@@ -158,6 +145,15 @@
 			</div>
 			<!-- Navbar (End) -->
 		</div>
+		<template v-for="nav in navItems" :key="nav.id">
+			<MegaMenu v-if="nav.subMenuId" :id="nav.subMenuId" 
+				@mouseenter="cancelHide"
+				@mouseleave="removeMegamenu"
+			>
+				<productCategoriesGrid v-if="nav.subMenuId === 'megamenu-1'"/>
+				<SlideByCat v-if="nav.subMenuId === 'megamenu-2'"/>
+			</MegaMenu>
+		</template>
 	</header>
 	<SwitchLanguage
 		:show="showLanguageModal"
@@ -174,13 +170,11 @@ import SwitchLanguage from "../widgets/SwitchLanguage.vue";
 import SidebarCart from "../widgets/SidebarCart.vue";
 import logo from "@/assets/img/logo.png";
 import google from "@/assets/img/google.png";
-
-import MegaMenuOne from "../widgets/MegaMenuOne.vue";
-import MegaMenuTwo from "../widgets/MegaMenuTwo.vue";
-
+import MegaMenu from "../widgets/MegaMenu.vue";
+import productCategoriesGrid from "../widgets/productCategoriesGrid.vue";
+import SlideByCat from "../widgets/slideByCat.vue";
 const showLanguageModal = ref(false);
 const showCartModal = ref(false);
-
 const activeMenu = ref(null);
 const toggleMenu = ref(null);
 const isNavbarActive = ref(false);
@@ -188,4 +182,36 @@ const isNavbarActive = ref(false);
 const closeNavbar = () => {
 	isNavbarActive.value = false;
 };
+
+
+// Meha Menu Scripts
+
+let hideTimeout = null;
+
+function openMegamenu(e, menuId) {
+	if (!menuId) return;
+	clearTimeout(hideTimeout);
+	const megaMenu = document.querySelector("#"+menuId);
+	if (megaMenu) {
+		document.querySelectorAll(".megamenu-wrap.active").forEach((el) => {
+			el.classList.remove("active");
+		});
+		megaMenu.classList.add("active");
+	}
+}
+function handleMouseLeave() {
+	hideTimeout = setTimeout(() => {
+		removeMegamenu();
+	}, 100); 
+}
+function removeMegamenu() {
+document
+	.querySelectorAll(".megamenu-wrap.active")
+	.forEach((el) => el.classList.remove("active"));
+}
+function cancelHide() {
+	clearTimeout(hideTimeout);
+}
+
+
 </script>

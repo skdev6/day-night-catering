@@ -15,11 +15,11 @@
             },
             767: {
                 slidesPerView: 3,
-                spaceBetween: 30,
+                spaceBetween: 12,
             },
             1200: {
                 slidesPerView: 4,
-                spaceBetween: 40,
+                spaceBetween: 15,
             }
       }"
     >
