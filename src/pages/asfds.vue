@@ -153,7 +153,7 @@ import sideWidgets from "@/components/UI/sideWidgets.vue";
 import addSlide from "@/components/UI/addSlide.vue";
 import inputCount from "@/components/UI/inputCount.vue";
 import buttonMain from "@/components/UI/buttonMain.vue";
-import Popup from "@/components/UI/popup.vue";
+import Popup from "@/components/UI/popup/popup.vue";
 import ProductSmallSlide from "@/components/UI/productSmallSlide.vue";
 import productThumbnail from "@/assets/img/prod-img.png";
 import InlineCard from "@/components/UI/cards/inlineCategoryCard.vue";

@@ -27,7 +27,7 @@
         <hr class="text-[#E0E0E0] my-[30px]"/>
         <div class="flex items-center">
             <h4 class="title-md">選擇菜式 <span class="text-[#616161] text-sm ml-1">還有<span class="text-[#212121]">12</span>個選項未選</span></h4>
-            <badge class="bg-[#F8F8F8] text-[#212121] ml-auto badge-lg border relative rounded-corner border-[#E0E0E0]">
+            <badge class="bg-[#F8F8F8] text-[#212121] ml-auto badge-lg border relative rounded-corner border-[#E0E0E0] cursor-pointer" @click="()=>popupStore.menuPopup(true)">
                 <badge class="absolute bottom-full translate-y-[30%] left-0 badge-sm rounded-corner text-white bg-[#212121]">MENU</badge>
                 查看餐單
             </badge>
@@ -58,6 +58,10 @@ import InputCount from './inputCount.vue';
 import productCategories from '@/data/productCategories';
 import products from '@/data/products';
 import { getProductsByIds } from '@/helper/productHelper';
+import { usePopupStore } from '@/stores/popup';
+
+const popupStore = usePopupStore();
+
 </script>
 <style lang="">
     

@@ -29,7 +29,7 @@
     import productCatTab from '../productCatTab.vue';
     import productCategories from '@/data/productCategories';
     import buttonMain from '../buttonMain.vue';
-    import Popup from '../popup.vue';
+    import Popup from '../popup/popup.vue';
     import { ref } from 'vue';
 
     const showPopup = ref(false);

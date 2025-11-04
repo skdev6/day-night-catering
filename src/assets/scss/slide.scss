@@ -49,3 +49,18 @@
         }
     }
 }
+.fancybox__container.themeic__gallery{
+    .fancybox__thumbs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .f-thumbs__viewport{
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+.f-button.is-arrow.is-prev, .f-button.is-arrow.is-next {
+    border: 1px solid #fff;
+    background-color: #ffffff26;
+} 

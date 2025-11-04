@@ -28,15 +28,13 @@
     import sideWidgets from '@/components/UI/sideWidgets.vue';
     import inputCount from '@/components/UI/inputCount.vue';
     import buttonMain from '@/components/UI/buttonMain.vue';
-    import Popup from '@/components/UI/popup.vue';
+    import Popup from '@/components/UI/popup/popup.vue';
     import ProductSmallSlide from '@/components/UI/productSmallSlide.vue'; 
 	import ProductDescription from '@/components/UI/productDescription.vue';
     import ProductDetailsRight from '@/components/UI/productDetailsRight.vue';
     import ProductDetailsNote from '@/components/UI/productDetailsNote.vue';
     import productGallery from '@/components/UI/productGallery.vue';
     import productsData from '@/data/products';
-    
-    console.log(productsData);
     
 
 </script>

@@ -41,6 +41,7 @@
             :key="pIndex"
             :title="product.name"
             :thumbnail="product.image"
+            :gallery="product.gallery"
         />
       </div>
     </div>

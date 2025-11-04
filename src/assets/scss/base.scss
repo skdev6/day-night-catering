@@ -49,4 +49,7 @@
         max-height: calc(100vh - 300px);
     }
 }
- 
+.popup__viewport{
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
+}

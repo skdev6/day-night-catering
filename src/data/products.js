@@ -3,6 +3,10 @@ import productImg2 from "@/assets/img/products/2.png"
 import productImg3 from "@/assets/img/products/3.png"
 import productImg4 from "@/assets/img/products/4.jpg"
 import productImg5 from "@/assets/img/products/5.png"
+import product from "@/assets/img/product.webp";
+import product2 from "@/assets/img/banner-2.png";
+import product3 from "@/assets/img/banner-3.png";
+import product4 from "@/assets/img/banner-4.png";
 export default [
 	{
 		id: 1,
@@ -22,6 +26,7 @@ export default [
 			"經典芝士肉醬焗意粉 (2磅裝)",
 			"意式芝士蛋糕杯 (8杯)",
 		],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 2,
@@ -33,6 +38,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價2",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 3,
@@ -44,6 +50,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 4,
@@ -55,6 +62,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 5,
@@ -66,6 +74,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 6,
@@ -77,6 +86,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 7,
@@ -88,6 +98,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 8,
@@ -99,6 +110,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 9,
@@ -110,6 +122,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 10,
@@ -121,6 +134,7 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 11,
@@ -140,6 +154,7 @@ export default [
 			"經典芝士肉醬焗意粉 (2磅裝)",
 			"意式芝士蛋糕杯 (8杯)",
 		],
+		gallery:[product,product2,product3,product4]
 	},
 	{
 		id: 12,
@@ -151,5 +166,6 @@ export default [
 		editable: true,
 		labelSm:"勁爆特價2",
 		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
 	}
 ];
