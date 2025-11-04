@@ -42,7 +42,7 @@
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { FreeMode, Navigation } from "swiper/modules";
-import ProductSmallCard from "./productSmallCard.vue";
+import ProductSmallCard from "./cards/productSmallCard.vue";
 // import {defineProps} from "vue"; 
 
 const props = defineProps({

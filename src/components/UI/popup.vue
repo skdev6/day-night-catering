@@ -2,8 +2,8 @@
   <teleport to="body">
     <div v-if="modelValue" class="popup__overlay" @click.self="close">
       <div class="popup__content">
-        <div class="flex items-center justify-between gap-5 px-7 py-5 border-b border-b-[#E0E0E0]">
-          {{ title }}
+        <div class="flex items-center justify-between gap-5 p-4 border-b border-b-[#E0E0E0]">
+          <h4 class="text-[20px] font-semibold">{{ title }}</h4>
           <button class="popup__close leading-5" @click="close">&times;</button>
         </div>
         <div><slot /></div>
@@ -42,17 +42,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 9999;
   padding-left: 15px;
-  padding-right: 15px; 
+  padding-right: 15px;
 }
 
 .popup__content {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 15px;
   position: relative;
   max-width: 650px;
-  width: 90%;
+  width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   animation: popupIn 0.3s ease;
 }

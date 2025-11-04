@@ -10,7 +10,7 @@
     </div>
 </template>
 <script setup>
-import inputCount from './inputCount.vue';
+import inputCount from '../inputCount.vue'; 
 const props = defineProps({
     thumbnail:String,
     badgeTitle:String,

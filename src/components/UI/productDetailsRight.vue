@@ -33,12 +33,13 @@
             </badge>
         </div>
         <div class="mt-8 flex flex-col gap-4">
-            <InlineCard
-                v-for="(box, index) in optionBox" 
+            <inlineCategoryCard
+                v-for="(category, index) in productCategories" 
                 :key="index" 
-                :title="box.title" 
-                :count="box.count" 
-                :badgeTitle="box.badgeTitle"
+                :title="category.name" 
+                :count="category.label" 
+                :badgeTitle="category.label2",
+                :catId="category.id"
             />
             <div class="bottom__panel gap-3 w-full py-5 justify-center hidden lg:inline-flex p-4 border border-[#E0E0E0] rounded-xl">
                 <InputCount class="w-[185px]"/>
@@ -52,77 +53,11 @@ import { ref } from 'vue';
 import AddSlide from './addSlide.vue';
 import Badge from './badge.vue';
 import ButtonMain from './buttonMain.vue';
-import InlineCard from './inlineCard.vue';
+import inlineCategoryCard from './cards/inlineCategoryCard.vue';
 import InputCount from './inputCount.vue';
-    const optionBox = ref([
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"9選6",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"5選1",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"9選6",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"9選6",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"5選1",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"9選6",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"9選6",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"9選6",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"5選1",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"9選6",
-            badgeTitle:"必選",
-        },
-        {
-            id:1,
-            title:"廚師秘制沙律",
-            count:"9選6",
-            badgeTitle:"必選",
-        }
-    ]);
-
+import productCategories from '@/data/productCategories';
+import products from '@/data/products';
+import { getProductsByIds } from '@/helper/productHelper';
 </script>
 <style lang="">
     
