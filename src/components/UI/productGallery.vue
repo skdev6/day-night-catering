@@ -2,7 +2,7 @@
   <div ref="galleryRef">
     <div :class="'product__gallery h-[400px] lg:h-[500px] flex gap-4 relative ' + (isV ? 'flex-row' : 'pb-[60px] lg:pb-[95px]')">
       <!-- Thumbnail Gallery -->
-      <div :class="'product__gallery-thumbs px-3 lg:px-0 ' + (isV ? 'h-full' : '!absolute bottom-0 left-0 w-full gap-5')">
+      <div :class="'swiper__wrapper product__gallery-thumbs px-3 lg:px-0 ' + (isV ? 'h-full' : '!absolute bottom-0 left-0 w-full gap-5')+' '+randomThumbClass">
         <swiper
           class="h-full"
           :modules="[FreeMode, Thumbs, Navigation]"
@@ -12,7 +12,10 @@
           free-mode
           watch-slides-progress
           @swiper="setThumbsSwiper"
-          navigation
+          :navigation="{
+            nextEl: `.${randomThumbClass} .v-slide__next`,
+            prevEl: `.${randomThumbClass} .v-slide__prev`,
+          }"
         >
           <swiper-slide
             v-for="(img, i) in images"
@@ -26,13 +29,24 @@
             />
           </swiper-slide>
         </swiper>
+        <button class="v-slide__prev">
+          <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 21.4141L1 11.4141L11 1.41406" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="v-slide__next">
+          <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.41406 21.4141L11.4141 11.4141L1.41406 1.41406" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+          </svg>
+        </button>
         <div class="whitespace-nowrap text-sm underline" v-if="!isV">
           全部圖片
         </div>
       </div>
       <!-- Main Gallery -->
       <swiper
-        class="product__gallery-main w-full h-full"
+        class="product__gallery-main swiper__wrapper w-full h-full"
+        :class="randomSlideClass"
         :modules="[Thumbs]"
         :space-between="10"
         :thumbs="{ swiper: thumbsSwiper }"
@@ -54,7 +68,7 @@
           <path d="M7.5 9.16663V7.29163M7.5 7.29163V5.41663M7.5 7.29163H5.625M7.5 7.29163H9.375" stroke="#212121" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </badge>
-      <badge class="bg-[#F8F8F8] text-[#212121] badge-lg border border-[#E0E0E0]">
+      <badge class="bg-[#F8F8F8] text-[#212121] badge-lg border border-[#E0E0E0] cursor-pointer">
         查看餐單
       </badge>
     </div>
@@ -76,6 +90,9 @@
   import { getUniqueId } from "@/helper/functions";
   const galleryRef = ref(null);
   const images = ref(productBanner);
+
+  const randomThumbClass = "slide__"+getUniqueId()+getUniqueId(); 
+  const randomSlideClass = "slide__"+getUniqueId()+getUniqueId();
 
   // Must be initialized before usage
   const thumbsSwiper = ref(null);
@@ -108,7 +125,7 @@
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 .product__gallery-main img {
   width: 100%;
   border-radius: 8px;
@@ -132,7 +149,16 @@
   display: flex;
   align-items: center;
 }
-
+.thumbnail-abs{
+  @media (min-width:1350px){
+    .product__gallery-thumbs{
+      position: absolute;
+      height: 100%;
+      right: 100%;
+      margin-right: 20px;
+    }
+  }
+}
 @media (max-width:991px){
   .product__gallery-thumbs{
     font-size: 50px; 

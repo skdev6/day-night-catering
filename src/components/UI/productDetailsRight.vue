@@ -33,7 +33,7 @@
             </badge>
         </div>
         <div class="mt-8 flex flex-col gap-4">
-            <inlineCategoryCard
+            <inlineCategoryCardPopup
                 v-for="(category, index) in productCategories" 
                 :key="index" 
                 :title="category.name" 
@@ -53,7 +53,7 @@ import { ref } from 'vue';
 import AddSlide from './addSlide.vue';
 import Badge from './badge.vue';
 import ButtonMain from './buttonMain.vue';
-import inlineCategoryCard from './cards/inlineCategoryCard.vue';
+import inlineCategoryCardPopup from './cards/inlineCategoryCardPopup.vue';
 import InputCount from './form/inputCount.vue';
 import productCategories from '@/data/productCategories';
 import products from '@/data/products';

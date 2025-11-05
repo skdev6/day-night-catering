@@ -27,22 +27,32 @@
         v-show="activeIndex === cat.id"
         class="tab-item transition-opacity duration-300"
       >
-        <img class="my-6" :src="cat.banner" alt="Banner"/> 
-        <div class="title-box text-[#212121] transition cursor-pointer flex items-center gap-2 mb-5">
-            <span class="text-white bg-[#212121] rounded-lg px-2 text-[12px] py-1">{{cat?.label}}</span>
-            <h4 class="text-[16px] font-semibold">{{cat?.name}}</h4>
-            <badge class="border-2 border-[#FFC300] gap-1 font-semibold ml-auto rounded-full flex items-center px-2">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13C3.68629 13 1 10.3137 1 7Z" fill="#FFC300" stroke="#FFC300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.67442 10L4.77519 9.32258L5.78295 7.53226L4 6.70968L4.34109 5.6129L6.24806 6.08065L6.43411 4H7.56589L7.73643 6.08065L9.65891 5.6129L10 6.70968L8.18605 7.53226L9.22481 9.32258L8.32558 10L7.00775 8.40323L5.67442 10Z" fill="#212121"/></svg>
-                {{cat?.label2}}
-            </badge>
-        </div>
+        <img class="mt-6" :src="cat.banner" alt="Banner"/> 
+        <inlineCategoryCard 
+            :title="cat?.name" 
+            :count="cat?.label" 
+            :badgeTitle="cat?.label2"
+            class="card-borderless my-[16px]"
+        />
         <productInlineCard
             v-for="(product, pIndex) in getProductsByIds(products, cat.productIds)"
+            v-if="productShow !== 'card'"
             :key="pIndex"
             :title="product.name"
             :thumbnail="product.image"
             :gallery="product.gallery"
         />
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-x-[10px] gap-y-[12px]" v-if="productShow === 'card'">
+          <ProductSmallCard
+            v-for="(product, pIndex) in getProductsByIds(products, cat.productIds)"
+            :key="pIndex"
+            :thumbnail="product.image"
+            :badgeTitle="product.labelSm"
+            :title="product.name"
+            :price="product.price"
+            :priceSm="product.originalPrice"
+          />
+        </div>
       </div>
     </div>
   </div> 
@@ -53,6 +63,8 @@ import { ref } from "vue";
 import productInlineCard from "./cards/productInlineCard.vue";
 import { getProductsByIds } from '@/helper/productHelper';
 import products from "@/data/products";
+import inlineCategoryCard from "./cards/inlineCategoryCard.vue";
+import ProductSmallCard from '@/components/UI/cards/productSmallCard.vue';
 
 const props = defineProps({
   tabContent: {
@@ -60,7 +72,11 @@ const props = defineProps({
     required: true
   },
   activeId:Number,
-  categories:Array
+  categories:Array,
+  productShow:{
+    type:String,
+    default:""
+  }
 });
 
 const activeIndex = ref(props.activeId);

@@ -7,6 +7,12 @@ import product from "@/assets/img/product.webp";
 import product2 from "@/assets/img/banner-2.png";
 import product3 from "@/assets/img/banner-3.png";
 import product4 from "@/assets/img/banner-4.png";
+import productBottle1 from "@/assets/img/products/product-bottle-1.webp";
+import productBottle2 from "@/assets/img/products/product-bottle-2.webp";
+import productBottle3 from "@/assets/img/products/product-bottle-3.webp";
+import productBottle4 from "@/assets/img/products/product-bottle-4.webp";
+import productBottle5 from "@/assets/img/products/product-bottle-5.webp";
+import productBottle6 from "@/assets/img/products/product-bottle-6.webp";
 export default [
 	{
 		id: 1,
@@ -167,5 +173,77 @@ export default [
 		labelSm:"勁爆特價2",
 		components: ["各10件"],
 		gallery:[product,product2,product3,product4]
-	}
+	},
+	{
+		id: 13,
+		name: "翡翠青提檸檬茶",
+		image: productBottle1,
+		price: 760,
+		originalPrice: 920,
+		quantity: 1,
+		editable: true,
+		labelSm:"勁爆特價2",
+		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
+	},
+	{
+		id: 14,
+		name: "翡翠青提檸檬茶",
+		image: productBottle2,
+		price: 760,
+		originalPrice: 920,
+		quantity: 1,
+		editable: true,
+		labelSm:"勁爆特價2",
+		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
+	},
+	{
+		id: 15,
+		name: "翡翠青提檸檬茶",
+		image: productBottle3,
+		price: 760,
+		originalPrice: 920,
+		quantity: 1,
+		editable: true,
+		labelSm:"勁爆特價2",
+		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
+	},
+	{
+		id: 16,
+		name: "翡翠青提檸檬茶",
+		image: productBottle4,
+		price: 760,
+		originalPrice: 920,
+		quantity: 1,
+		editable: true,
+		labelSm:"勁爆特價2",
+		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
+	},
+	{
+		id: 17,
+		name: "翡翠青提檸檬茶",
+		image: productBottle5,
+		price: 760,
+		originalPrice: 920,
+		quantity: 1,
+		editable: true,
+		labelSm:"勁爆特價2",
+		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
+	},
+	{
+		id: 18,
+		name: "翡翠青提檸檬茶",
+		image: productBottle6,
+		price: 760,
+		originalPrice: 920,
+		quantity: 1,
+		editable: true,
+		labelSm:"勁爆特價2",
+		components: ["各10件"],
+		gallery:[product,product2,product3,product4]
+	},
 ];

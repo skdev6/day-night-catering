@@ -1,6 +1,6 @@
 <template lang="">
-    <div class="flex items-center gap-x-3 mb-3">
-        <img :src="thumbnail" alt="" class="thumbnail border border-[#EEEEEE] w-[60px] rounded-lg" :class="gallery ? 'cursor-pointer transition hover:border-[#b9b5b5]' : ''" @click="()=>{
+    <div class="flex items-center gap-x-[12px] mb-3">
+        <img :src="thumbnail" alt="" class="thumbnail border border-[#EEEEEE] w-[56px] rounded-lg" :class="gallery ? 'cursor-pointer transition hover:border-[#b9b5b5]' : ''" @click="()=>{
             if(gallery){
                 openGallery(gallery);
             }

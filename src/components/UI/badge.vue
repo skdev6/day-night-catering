@@ -18,7 +18,7 @@ export default {
         font-size: 12px;
         line-height: 16px;
         text-align: center;
-        padding: 2px 9px;
+        padding:3px 9px;
         border-radius: 4px;
         font-weight: 700;
         &.badge-sm{

@@ -1,27 +1,42 @@
-.swiper .swiper-button-prev, .swiper .swiper-button-next {
+.v-slide__prev,.v-slide__next,.swiper-button-next,.swiper-button-prev{
     z-index: 50;
     background-color: #fff;
     border-radius: 500px;
     border: 1px solid #E0E0E0;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    width: 40px;
-    height: 40px;
-    font-size:10px;   
-    color: #000000;   
+    width:32px;
+    height:32px;
+    font-size:9px;   
+    color:rgba(0, 0, 0, 1);   
+    transition:var(--base-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+        width: 1em;
+        height: auto;
+        path{
+            stroke: currentColor; 
+        }
+    }
 } 
-.swiper .swiper-button-prev svg, .swiper .swiper-button-next svg{
-    width: 1em;
-    height: auto;
+.swiper{
+    .swiper-button-next,.swiper-button-prev{
+        color:rgba(0, 0, 0, 1);   
+        width:32px;
+        height:32px;
+        svg{
+            width: 1em;
+            height: auto;
+            path{
+                fill: currentColor; 
+            }
+        }
+    }
 }
-.swiper .swiper-button-prev svg path, .swiper .swiper-button-next svg path{
-    fill: currentColor; 
-}
-.nav-none .swiper-button-prev, .nav-none .swiper-button-next {
+.nav-none .v-slide__prev, .nav-none .v-slide__next{
     display: none;
 } 
-.swiper-button-next,.swiper-button-prev{
-    transition:var(--base-transition);
-}
 .swiper-button-disabled {
     opacity: 0;
     visibility: hidden;
@@ -64,3 +79,39 @@
     border: 1px solid #fff;
     background-color: #ffffff26;
 } 
+.product__gallery-thumbs{
+    .v-slide__prev,.v-slide__next{
+        position: absolute; 
+        --space:5px;
+        --rotate:0deg;
+        top: 50%;
+        transform: translateY(-50%) rotate(var(--rotate)); 
+    }
+    .v-slide__prev{
+        left: var(--space);
+    }
+    .v-slide__next{
+        right: calc(var(--space) + 62px);
+    }
+} 
+
+.thumb-vertical{
+    .product__gallery-thumbs{
+        .v-slide__prev,.v-slide__next{
+            --space:-40px;
+            --rotate:0deg;
+            left: 50%;
+            right: auto; 
+            transform: translateX(-50%) rotate(var(--rotate)); 
+        }
+        .v-slide__prev{
+            top: var(--space);
+                --rotate: 90deg;
+        }
+        .v-slide__next{
+            bottom: var(--space);
+                --rotate: 90deg;
+                top:auto;
+        }
+    }
+}

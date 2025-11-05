@@ -36,7 +36,7 @@ export default {
       setTimeout(() => {
         this.$emit("update:modelValue", false);
         this.closing = false; 
-      }, 100); 
+      }, 150); 
     }
   }
 };
@@ -48,17 +48,17 @@ export default {
 }
 .popup__content {
   background: #fff;
-  border-radius: 15px;
+  border-radius: 25px;
   position: relative;
-  max-width: 650px;
+  max-width:580px;
   width: 100%;
-  box-shadow:0 10px 30px rgb(0 0 0 / 17%); 
+  box-shadow:0 10px 30px rgb(0 0 0 / 3%); 
 }
 .popup__content.opening{
   animation: popupIn .53s cubic-bezier(.19,1,.22,1); 
 }
 .popup__content.closing{
-  animation: popupOut .2s ease-out;
+  animation: popupOut .3s ease-out;
 }
 .popup__overlay.opening{
   animation: PopupOverlayFadeIn .3s ease-out; 
@@ -67,7 +67,7 @@ export default {
   animation: PopupOverlayFadeOut .3s ease-out; 
 }
 .popup__overlay{
-  background-color: rgb(0 0 0 / 51%);
+  background-color: rgba(33, 33, 33, 0.4);
 }
 .popup-transparent{
   .popup__content{
