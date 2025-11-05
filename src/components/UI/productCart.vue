@@ -5,7 +5,7 @@
                 <div class="checkbox-item">
                     <input type="checkbox" class="form__checkbox"/>
                 </div>
-                <div v-if="thumbnail"><img :src="thumbnail" class="product-img min-w-[64px] w-[81px] max-w-full rounded-lg border-2 border-[#EEEEEE]" alt=""></div>
+                <div v-if="thumbnail"><img :src="thumbnail" class="product-img min-w-[64px] w-[81px] max-w-full rounded-[17px] border-2 border-[#EEEEEE]" alt=""></div>
             </div>
             <div class="product-info text-[#767676]">
                 <h4 class="title-h4 text-[#232323] mb-2 font-semibold">{{title}}</h4>
