@@ -10,7 +10,7 @@ import product4 from "@/assets/img/banner-4.png";
 export default [
 	{
 		id: 1,
-		name: "2025皇牌之選】4-5人 日夜經典到會套餐",
+		name: "經典凱撒沙律 (5磅裝)",
 		image:productImgOne,
 		price: 888,
 		originalPrice: 1188,
@@ -30,7 +30,7 @@ export default [
 	},
 	{
 		id: 2,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "蜜桃鴨胸沙律伴胡麻醬沙律 (5磅裝)",
 		image: productImg2,
 		price: 760,
 		originalPrice: 920,
@@ -42,7 +42,7 @@ export default [
 	},
 	{
 		id: 3,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "香脆青蘋果提子沙律 (5磅裝)",
 		image:productImg3,
 		price: 480,
 		originalPrice: 560,
@@ -54,7 +54,7 @@ export default [
 	},
 	{
 		id: 4,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "煙三文魚羽衣甘藍凱撒沙律 (5磅裝)",
 		image:productImg4,
 		price: 480,
 		originalPrice: 560,
@@ -66,7 +66,7 @@ export default [
 	},
 	{
 		id: 5,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "泰式鳳爪大蝦沙律 (5磅裝)",
 		image:productImg5,
 		price: 480,
 		originalPrice: 560,
@@ -78,7 +78,7 @@ export default [
 	},
 	{
 		id: 6,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "煙燻三文魚蛋片鮮蔬沙律 (5磅裝)",
 		image:productImgOne,
 		price: 480,
 		originalPrice: 560,
@@ -90,7 +90,7 @@ export default [
 	},
 	{
 		id: 7,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅",
 		image:productImgOne,
 		price: 480,
 		originalPrice: 560,
@@ -102,7 +102,7 @@ export default [
 	},
 	{
 		id: 8,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "藜麥蜜柑田園沙律 (5磅裝)",
 		image:productImgOne,
 		price: 480,
 		originalPrice: 560,
@@ -114,7 +114,7 @@ export default [
 	},
 	{
 		id: 9,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅",
 		image:productImgOne,
 		price: 480,
 		originalPrice: 560,
@@ -126,7 +126,7 @@ export default [
 	},
 	{
 		id: 10,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅",
 		image:productImgOne,
 		price: 480,
 		originalPrice: 560,
@@ -158,7 +158,7 @@ export default [
 	},
 	{
 		id: 12,
-		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅 (各10件)",
+		name: "東南亞拼盤】越式香炸蔗蝦 拼 泰式魚餅",
 		image: productImg2,
 		price: 760,
 		originalPrice: 920,

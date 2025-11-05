@@ -1,7 +1,8 @@
 <template>
   <teleport to="body">
-    <div v-if="modelValue" class="popup__overlay" :class="class" @click.self="close">
-      <div class="popup__content">
+    <div v-if="modelValue" class="popup__wrapper flex items-end lg:items-center justify-center fixed h-full w-full top-0 left-0" :class="class">
+      <div class="popup__overlay absolute inset-0 -z-10" @click="close" :class="{opening:!closing,closing:closing}"></div> 
+      <div class="popup__content" :class="{opening:!closing,closing:closing}">
         <div class="popup-header flex items-center justify-between gap-5 p-4 border-b border-b-[#E0E0E0]">
           <h4 class="title text-[20px] font-semibold">{{ title }}</h4>
           <button class="popup__close leading-5" @click="close">&times;</button>
@@ -23,44 +24,50 @@ export default {
     },
     class:String
   },
+  data(){
+    return{
+      closing:false
+    }
+  },
   emits: ["update:modelValue"],
   methods: {
     close() {
-      this.$emit("update:modelValue", false);
+      this.closing = true;
+      setTimeout(() => {
+        this.$emit("update:modelValue", false);
+        this.closing = false; 
+      }, 100); 
     }
   }
 };
 </script>
 
-<style lang="scss">
-.popup__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+<style lang="scss" scoped>
+.popup__wrapper{
   z-index: 9999;
-  padding-left: 15px;
-  padding-right: 15px;
 }
-
 .popup__content {
   background: #fff;
   border-radius: 15px;
   position: relative;
   max-width: 650px;
   width: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  animation: popupIn 0.3s ease;
+  box-shadow:0 10px 30px rgb(0 0 0 / 17%); 
 }
-.popup-fade-up{
-  .popup__content{
-    animation: fadeUp .83s cubic-bezier(0.19, 1, 0.22, 1);
-  }
+.popup__content.opening{
+  animation: popupIn .53s cubic-bezier(.19,1,.22,1); 
+}
+.popup__content.closing{
+  animation: popupOut .2s ease-out;
+}
+.popup__overlay.opening{
+  animation: PopupOverlayFadeIn .3s ease-out; 
+}
+.popup__overlay.closing{  
+  animation: PopupOverlayFadeOut .3s ease-out; 
+}
+.popup__overlay{
+  background-color: rgb(0 0 0 / 51%);
 }
 .popup-transparent{
   .popup__content{
@@ -82,23 +89,35 @@ export default {
 }
 
 @keyframes popupIn {
-  from {
-    transform: scale(0.9);
+  0% {
+    transform: translateY(120%);
     opacity: 0;
   }
-  to {
-    transform: scale(1);
+  50% {
     opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
   }
 }
-@keyframes fadeUp {
-  from {
-    transform:translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform:translateY(0);
+@keyframes popupOut {
+  0% {
+    transform: translateY(0%);
     opacity: 1;
   }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(120%);
+  }
+}   
+@keyframes PopupOverlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes PopupOverlayFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 </style>
