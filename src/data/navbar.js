@@ -20,9 +20,6 @@ export const navItems = [
 	{ name: "BBQ燒烤", url: "#", subMenu: false },
 	{ name: "小朋友生日會", url: "#", subMenu: false },
 	{ name: "到會餐單", url: "#", subMenu: false },
-	{ name: "周邊產品", url: "#", subMenu: false },
-	{ name: "客人回圖", url: "#", subMenu: false },
-	{ name: "聯絡我們", url: "#", subMenu: false },
 ];
 
 export const productCategories = [

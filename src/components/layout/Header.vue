@@ -122,6 +122,22 @@
 					</div>
 					<div class="navbar__inner">
 						<ul>
+							<li>
+								<RouterLink
+									to="/"
+									class="nav-item flex gap-1 items-center"
+								>
+									Home
+								</RouterLink>
+							</li>
+							<li>
+								<RouterLink
+									to="/cart"
+									class="nav-item flex gap-1 items-center"
+								>
+									Cart
+								</RouterLink>
+							</li>
 							<li v-for="(item, index) in navItems" :key="index"
 								@mouseenter="(e) => openMegamenu(e, item?.subMenuId)"
 								@mouseleave="handleMouseLeave"

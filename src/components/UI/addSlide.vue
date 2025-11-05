@@ -53,11 +53,9 @@ const info = ref([
 ]);
 
 function onSwiper(swiper) {
-  console.log("Swiper instance:", swiper);
 }
 
 function onSlideChange() {
-  console.log("Slide changed");
 }
 </script> 
 <style>
