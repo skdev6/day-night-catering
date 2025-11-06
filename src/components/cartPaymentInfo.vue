@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <DeliveryCard class="mb-4"/>
+        <DeliveryCard class="mb-4 hidden xl:flex"/>
         <CouponField class="mb-4"/>
         <div class="border-y border-y-[#ddd] py-4">
             <h4 class="text-[24px] font-semibold mb-2">訂單詳情</h4>
@@ -23,7 +23,7 @@
             <span class="text-[#212121] font-semibold">小計</span>
             <span class="text-[#212121] font-semibold"><small>$</small>2200</span>
         </div>
-        <ButtonMain class="btn-dark w-full">
+        <ButtonMain class="btn-dark w-full hidden! xl:flex!">
             結帳
         </ButtonMain>
         <h4 class="text-[14px] font-semibold mb-2 mt-4">我們支持</h4>
@@ -36,6 +36,9 @@
             <img :src="paysix" class="max-w-[28px]! h-auto" alt="">
             <img :src="payseven" class="max-w-[28px]! h-auto" alt="">
         </div>
+        <p class="xl:hidden text-center text-[12px] text-[#757575] mt-[18px] mb-[21px]">
+            訂單一經確認後，如需取消訂單或延遲訂單，請於 7 日前通知並將會收取 30%手續費。 若客戶於到會日期前少於 3 日通知取消訂單，已付金額將不獲退回。 惡劣天氣安排：如到會當日，天文台懸掛八號以上暴風信號及黑色暴雨，顧客可選擇保留訂單及選擇原訂購日期起 90 天內延期。
+        </p>
     </div>
 </template>
 <script setup>

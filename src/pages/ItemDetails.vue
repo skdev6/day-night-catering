@@ -20,7 +20,7 @@
             <div class="2xl:h-full 2xl:absolute 2xl:left-full 2xl:pl-4 2xl:top-20 fixed 2xl:right-auto right-0 top-[130px] lg:top-[250px] z-[500] side__widgets"><sideWidgets class="sticky top-[250px]"/></div>
         </div> 
         <div class="cart-count__btn" ref="cartBtnRef">
-            <div class="flex gap-3 fixed z-9999 w-full bottom-0 py-5 justify-center bottom__panel lg:hidden"> 
+            <div class="flex gap-3 fixed z-[700] w-full bottom-0 py-5 justify-center bottom__panel lg:hidden"> 
                 <inputCount class="w-[124px]"/>
                 <buttonMain>加入購物車</buttonMain>
             </div>
