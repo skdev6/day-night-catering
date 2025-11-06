@@ -22,7 +22,7 @@
                     <ProductsTabByCat class="mt-4 bg-white rounded-xl p-[16px] xl:p-7"/>
                 </div>
                 <div class="col-span-4">
-                    <CartPaymentInfo class="hidden xl:block"/>
+                    <CartPaymentInfo class="hidden xl:block sticky top-[200px]"/>
                 </div>
             </div>
         </div>
