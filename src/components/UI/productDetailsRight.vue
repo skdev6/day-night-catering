@@ -67,8 +67,13 @@ const popupStore = usePopupStore();
 
 let cleanFixedElement = null;
 
-onMounted(()=>{
-    cleanFixedElement = setElementFixed(choose__dishes.value, document.querySelectorAll(".header__area")[0]?.getBoundingClientRect()?.height || 0, true, false, null, 991);  
+onMounted(()=>{  
+    cleanFixedElement = setElementFixed({
+        element:choose__dishes.value, 
+        top:document.querySelectorAll(".header__area")[0]?.getBoundingClientRect()?.height || 0,
+        startMediaQuery:991,
+        zIndex:20
+    });  
 });
 
 onUnmounted(()=>{
