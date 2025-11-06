@@ -72,7 +72,7 @@ onMounted(()=>{
         element:choose__dishes.value, 
         top:document.querySelectorAll(".header__area")[0]?.getBoundingClientRect()?.height || 0,
         startMediaQuery:991,
-        zIndex:20
+        zIndex:600
     });  
 });
 
