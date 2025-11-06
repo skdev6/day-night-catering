@@ -109,7 +109,7 @@ onMounted(updateClasses);
     border-color: transparent;
     background-color: transparent;
     padding: 0;
-    max-width: 90px;
+    max-width: 80px; 
 }  
 .count-small .count-reduce,.count-small .input-control{
     opacity: 0;
@@ -124,6 +124,8 @@ onMounted(updateClasses);
 }
 .count-small .count-btn {
     border-color: #E0E0E0;
+    height: 28px;
+    width: 28px;
 }
 .count-small .count-btn svg path {
     stroke: #767676;

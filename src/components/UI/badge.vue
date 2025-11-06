@@ -32,6 +32,9 @@ export default {
     }
     .badge-2{
       padding: 4px 12px;
+      @media (max-width:991px){
+        padding: 3px 8px; 
+      }
     }
     .badge-lg {
         padding: 8px 11px;

@@ -15,8 +15,8 @@
         <div class="flex items-center bg-[#363233] text-white rounded-lg p-4 gap-3">
             <img :src="item.icon" alt="" />
             <div class="text">
-                <h3 class="font-semibold text-xl mb-1" v-html="item.title"></h3>
-                <p class="text-sm" v-html="item.des"></p>
+                <h3 class="font-semibold text-[14px] mb-1" v-html="item.title"></h3>
+                <p class="text-[10px]" v-html="item.des"></p>
             </div>
         </div>
       </swiper-slide>

@@ -20,6 +20,14 @@
         }
     }
 } 
+.v-slide__prev,.v-slide__next{
+&.slide-btn-2{
+    height: 40px;   
+    width: 40px;
+    box-shadow: none;    
+}
+}
+
 .swiper{
     .swiper-button-next,.swiper-button-prev{
         color:rgba(0, 0, 0, 1);   
@@ -80,6 +88,10 @@
     background-color: #ffffff26;
 } 
 .product__gallery-thumbs{
+    .swiper{
+        margin-left: 0;
+        margin-right: 0;
+    }
     .v-slide__prev,.v-slide__next{
         position: absolute; 
         --space:5px;

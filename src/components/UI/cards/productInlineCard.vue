@@ -5,7 +5,7 @@
                 openGallery(gallery);
             }
         }"/>
-        <h3 class="text-[13px] font-medium">{{title}}</h3>
+        <h3 class="text-[13px] lg:font-medium font-normal">{{title}}</h3>
         <inputCount class="count-small ml-auto"/>
     </div>
 </template>

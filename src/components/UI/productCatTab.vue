@@ -6,7 +6,7 @@
         v-for="(cat, index) in categories"
         :key="index"
         @click="activeIndex = cat.id"
-        class="cursor-pointer px-3 py-4 text-center transition-all text-[14px] font-medium"
+        class="cursor-pointer px-3 py-4 text-center transition-all text-[14px] font-normal"
         :class="{
           'bg-white font-semibold text-[#212121] active': activeIndex === cat.id,
           'bg-[#F7F7F7] text-[#757575]': activeIndex !== cat.id
@@ -85,6 +85,9 @@ const activeIndex = ref(props.activeId);
 <style lang="scss">
 .tab-item {
   animation: fadeIn 0.3s ease;
+}
+.cat-navbar li.active{
+  font-weight: 500;
 }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(5px); }

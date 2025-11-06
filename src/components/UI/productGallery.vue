@@ -39,7 +39,7 @@
           <path d="M1.41406 21.4141L11.4141 11.4141L1.41406 1.41406" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
           </svg>
         </button>
-        <div class="whitespace-nowrap text-sm underline" v-if="!isV">
+        <div class="whitespace-nowrap text-sm underline" v-if="!isV" @click="()=>openGallery(images)">
           全部圖片
         </div>
       </div>
