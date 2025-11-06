@@ -15,10 +15,10 @@
             </a>
         </div>
         <div class="side-widget-wrap border bg-white border-[#E0E0E0] px-2 py-3 text-center w-[81px] rounded-2xl flex flex-col gap-3">
-            <a to="#" class="item">
+            <button class="item" @click="()=>goToScroll(0)">
                 <img :src="arrowTop" class="mx-auto" alt="">
                 <div class="text-sm hidden lg:block">回到頂部</div>
-            </a>
+            </button>
         </div>
     </div>
 </template>
@@ -27,8 +27,10 @@ import icon from '@/assets/img/book-icon.svg';
 import whatsapp from '@/assets/img/whatsapp.svg';
 import arrowTop from '@/assets/img/arrow-top.svg';
 import { usePopupStore } from '@/stores/popup';
+import { goToScroll } from '@/helper/functions';
 
 const popupStore = usePopupStore();
+
 
 </script>
 <style>

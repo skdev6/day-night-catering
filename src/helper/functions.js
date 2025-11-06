@@ -111,3 +111,21 @@ export function setElementFixed(
     resetElement();
   };
 }
+
+export function goToScroll(position = 0, smooth = true) {
+    let targetY = 0;
+
+    if (typeof position === 'string') {
+        const el = document.querySelector(position);
+        if (el) targetY = el.getBoundingClientRect().top + window.scrollY;
+    } else if (position instanceof HTMLElement) {
+        targetY = position.getBoundingClientRect().top + window.scrollY;
+    } else {
+        targetY = position;
+    }
+
+    window.scrollTo({
+        top: targetY,
+        behavior: smooth ? 'smooth' : 'auto'
+    });
+}

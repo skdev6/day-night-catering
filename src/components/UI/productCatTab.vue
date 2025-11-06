@@ -33,7 +33,9 @@
             :count="cat?.label" 
             :badgeTitle="cat?.label2"
             class="card-borderless my-[16px]"
+            v-if="productShow !== 'card'"
         />
+        <h2 class="text-[16px] my-[14px] font-semibold" v-if="productShow === 'card'">{{ cat?.name }}</h2> 
         <productInlineCard
             v-for="(product, pIndex) in getProductsByIds(products, cat.productIds)"
             v-if="productShow !== 'card'"
