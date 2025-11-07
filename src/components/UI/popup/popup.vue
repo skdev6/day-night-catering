@@ -48,11 +48,14 @@ export default {
 }
 .popup__content {
   background: #fff; 
-  border-radius:25px 25px 0px 0px;
+  border-radius:25px;
   position: relative;
   max-width:580px;
   width: 100%;
   box-shadow:0 10px 30px rgb(0 0 0 / 3%); 
+  @media (max-width:991px){
+    border-radius:25px 25px 0px 0px; 
+  }
 }
 .popup__content.opening{
   animation: popupIn .53s cubic-bezier(.19,1,.22,1); 

@@ -11,7 +11,6 @@
         <div class="py-[20px] px-[30px] prod-tab-footer">
             <buttonMain class="w-full justify-between!" @click="()=>{
                 showMoreProductPopup = true;
-                showPopup = false
             }">
                 <div class="left-text text-left">
                     $16560
