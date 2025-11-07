@@ -2,15 +2,15 @@
     <div class="flex flex-col gap-3">
         <div class="side-widget-wrap border bg-white border-[#E0E0E0] px-2 py-3 text-center w-[81px] rounded-2xl flex flex-col gap-4">
             <a to="#" class="item" @click="()=>popupStore.menuPopup(true)">
-                <img :src="icon" class="mx-auto mb-2" alt="">
+                <img :src="icon" class="mx-auto mb-1 lg:mb-2" alt="">
                 <div class="text-sm hidden lg:block">查看餐單</div>
             </a>
             <a to="#" class="item" @click="()=>popupStore.menuPopup(true)">
-                <img :src="icon" class="mx-auto mb-2" alt="">
+                <img :src="icon" class="mx-auto mb-1 lg:mb-2" alt="">
                 <div class="text-sm hidden lg:block">查看餐單</div>
             </a>
             <a to="#" class="item">
-                <img :src="whatsapp" class="mx-auto mb-2" alt="">
+                <img :src="whatsapp" class="mx-auto mb-1 lg:mb-2" alt="">
                 <div class="text-sm hidden lg:block">查看餐單</div>
             </a>
         </div>
@@ -37,8 +37,8 @@ const popupStore = usePopupStore();
     @media (max-width:991px){
         .side-widget-wrap {
             border-radius: 8px 0 0 8px;
-            padding: 10px;
-            max-width: 50px;
+            padding: 8px;
+            max-width: 41px;
         }
     }
 </style>

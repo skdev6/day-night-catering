@@ -62,7 +62,7 @@ export function setElementFixed({
       element.style.position = "absolute";
       element.style.top = `${endOffset - elemHeight - elemOffsetTop}px`;
       element.style.left = "";
-      element.style.width = "100%";
+      element.style.width = "";
       element.style.zIndex = "";
       return;
     }
