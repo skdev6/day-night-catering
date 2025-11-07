@@ -43,6 +43,7 @@
                 :badgeTitle="category.label2",
                 :catId="category.id"
             />
+            <div ref="choose__dishes_end"></div>
             <div class="gap-3 w-full py-5 justify-center hidden lg:inline-flex p-4 border border-[#E0E0E0] rounded-xl">
                 <InputCount class="w-[185px]"/>
                 <ButtonMain class="w-full">立即落單</buttonMain>
@@ -63,6 +64,7 @@ import { getProductsByIds } from '@/helper/productHelper';
 import { usePopupStore } from '@/stores/popup';
 import { setElementFixed } from '@/helper/functions';
 const choose__dishes = ref(null);
+const choose__dishes_end = ref(null);
 const popupStore = usePopupStore();
 
 let cleanFixedElement = null;
@@ -70,6 +72,7 @@ let cleanFixedElement = null;
 onMounted(()=>{  
     cleanFixedElement = setElementFixed({
         element:choose__dishes.value, 
+        end:choose__dishes_end.value, 
         top:document.querySelectorAll(".header__area")[0]?.getBoundingClientRect()?.height || 0,
         startMediaQuery:991,
         zIndex:600

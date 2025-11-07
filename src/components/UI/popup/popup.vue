@@ -47,8 +47,8 @@ export default {
   z-index: 9999;
 }
 .popup__content {
-  background: #fff;
-  border-radius: 25px;
+  background: #fff; 
+  border-radius:25px 25px 0px 0px;
   position: relative;
   max-width:580px;
   width: 100%;
